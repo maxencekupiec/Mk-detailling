@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+._*
+
+# Éditeurs / IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*~
+.tmp/
+
+# Fichiers raw (on garde les versions finales uniquement)
+assets/france-raw.svg
+assets/galerie/*.png
+assets/gallery-*.png

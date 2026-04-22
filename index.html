@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK Detailling | Nettoyage auto professionnel &agrave; domicile &agrave; Nancy, Metz &amp; Luxembourg</title>
+    <meta name="description" content="Nettoyage auto professionnel &agrave; domicile &agrave; Nancy. Prestations int&eacute;rieur, ext&eacute;rieur, c&eacute;ramique. Intervention Nancy, Metz, Luxembourg. Devis gratuit sur WhatsApp.">
+    <meta name="keywords" content="nettoyage auto Nancy, nettoyage auto professionnel Nancy, lavage voiture domicile Nancy, nettoyage automobile Metz, nettoyage auto Luxembourg, nettoyage interieur voiture Nancy, ceramique auto Nancy, polish voiture Nancy, renovation plastique auto, lavage jantes Nancy">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:title" content="MK Detailling | Nettoyage automobile premium &agrave; domicile">
+    <meta property="og:description" content="Nettoyage auto professionnel &agrave; domicile. Nancy, Metz, Luxembourg. Devis gratuit.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-text-reveal">
+            <div class="loader-line line-1">
+                <span><img src="assets/logo.png" alt="MK Detailling" class="loader-logo-img"></span>
+            </div>
+            <div class="loader-line line-3">
+                <span>Nettoyage automobile &agrave; domicile</span>
+            </div>
+        </div>
+        <div class="loader-wipe"></div>
+    </div>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Background system -->
+    <div class="bg-system">
+        <div class="bg-grid"></div>
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-orb bg-orb-4"></div>
+        <div class="bg-particles" id="particles"></div>
+    </div>
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="assets/logo.png" alt="MK Detailling">
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#services" data-hover="Services">Services</a></li>
+                <li><a href="#zones" data-hover="Zones">Zones</a></li>
+                <li><a href="#galerie" data-hover="Galerie">Galerie</a></li>
+                <li><a href="#avis" data-hover="Avis">Avis</a></li>
+                <li><a href="#contact" data-hover="Contact">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/33781861695" class="nav-cta" target="_blank" rel="noopener">
+                <span>Devis gratuit</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- 3 vidéos en fond côte à côte -->
+        <div class="hero-video-wall">
+            <video autoplay muted loop playsinline poster="assets/gallery-1.webp" id="heroVid1" data-start="3">
+                <source src="assets/video-1.mov" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline poster="assets/gallery-2.webp">
+                <source src="assets/video-2.mov" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline poster="assets/gallery-3.webp">
+                <source src="assets/video-3.mov" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-video-overlay"></div>
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid-pattern"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-reveal>
+                <span class="pulse-dot"></span>
+                Encore 2 cr&eacute;neaux disponibles cette semaine
+            </div>
+            <h1 class="hero-title" data-reveal>
+                <span class="line"><span class="word">Nettoyage automobile</span></span>
+                <span class="line"><span class="word accent-animated">premium</span></span>
+                <span class="line"><span class="word">&agrave; Nancy</span></span>
+            </h1>
+            <p class="hero-slogan" data-reveal>Nettoyage auto professionnel &agrave; domicile &mdash; Nancy, Metz &amp; Luxembourg.<br>Par des passionn&eacute;s, pour des passionn&eacute;s.</p>
+            <div class="hero-ctas" data-reveal>
+                <a href="https://wa.me/33781861695" class="btn btn-primary magnetic" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <span>Demander un devis</span>
+                </a>
+                <a href="#video" class="btn btn-ghost magnetic">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
+                    <span>Nous d&eacute;couvrir</span>
+                </a>
+            </div>
+            <div class="hero-scroll-indicator" data-reveal>
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="marquee-star">&#9733;</span>
+            <span>"Ma voiture n'a jamais &eacute;t&eacute; aussi propre"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"Un r&eacute;sultat dingue, je recommande &agrave; 100%"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"Tr&egrave;s pro, ponctuel, prix correct"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"On dirait qu'elle sort du concessionnaire"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"Je ne ferai plus jamais appel &agrave; quelqu'un d'autre"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"Ma voiture n'a jamais &eacute;t&eacute; aussi propre"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"Un r&eacute;sultat dingue, je recommande &agrave; 100%"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"Tr&egrave;s pro, ponctuel, prix correct"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"On dirait qu'elle sort du concessionnaire"</span>
+            <span class="marquee-star">&#9733;</span>
+            <span>"Je ne ferai plus jamais appel &agrave; quelqu'un d'autre"</span>
+            <span class="marquee-star">&#9733;</span>
+        </div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-badges">
+                <a href="#" target="_blank" rel="noopener" class="trust-badge glass">
+                    <div class="trust-logo trustpilot-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <div class="trust-info">
+                        <div class="trust-stars">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <span class="trust-text"><strong>5/5</strong> sur Trustpilot &mdash; 22 avis</span>
+                    </div>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="trust-badge glass">
+                    <div class="trust-logo google-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                    </div>
+                    <div class="trust-info">
+                        <div class="trust-stars">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbc05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbc05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbc05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbc05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbc05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <span class="trust-text"><strong>5/5</strong> sur Google &mdash; 18 avis</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-reveal>
+
+                <h2 class="section-title">Nos prestations de <span class="accent">nettoyage auto</span></h2>
+                <p class="section-subtitle">Int&eacute;rieur, ext&eacute;rieur ou formule compl&egrave;te &mdash; adapt&eacute; &agrave; chaque v&eacute;hicule, &agrave; domicile.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Intérieur - bleu -->
+                <div class="service-card glass cyan-card" data-reveal>
+                    <div class="service-tag-wrap">
+                        <span class="service-tag">Prestation Int&eacute;rieure</span>
+                    </div>
+                    <div class="service-includes">
+                        <span class="includes-label">Ce qui est possible :</span>
+                        <ul>
+                            <li>Aspiration compl&egrave;te</li>
+                            <li>D&eacute;contamination vapeur</li>
+                            <li>Traitement des plastiques</li>
+                            <li>Traitement des cuirs</li>
+                            <li>D&eacute;graissage des vitres</li>
+                            <li>Injection-extraction tapis &amp; si&egrave;ges tissus</li>
+                        </ul>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-range">70&euro; &mdash; 110&euro;</span>
+                        <span class="price-note">selon v&eacute;hicule</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-badge">Demander un devis</span>
+                        <a href="https://wa.me/33781861695" class="service-link" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Prestation Complète - orange -->
+                <div class="service-card glass featured" data-reveal>
+                    <div class="service-tag-wrap">
+                        <span class="service-tag featured-service-tag">Prestation Compl&egrave;te</span>
+                    </div>
+                    <p class="service-description">On remet votre v&eacute;hicule dans un &eacute;tat concession, int&eacute;rieur et ext&eacute;rieur.</p>
+                    <div class="service-includes">
+                        <span class="includes-label">Ce qui est possible :</span>
+                        <ul>
+                            <li>Tout l'int&eacute;rieur</li>
+                            <li>Tout l'ext&eacute;rieur</li>
+                            <li>Finitions premium</li>
+                            <li>R&eacute;sultat showroom</li>
+                        </ul>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-range featured-price">150&euro; &mdash; 250&euro;</span>
+                        <span class="price-note">selon v&eacute;hicule</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-badge">Demander un devis</span>
+                        <a href="https://wa.me/33781861695" class="service-link" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Extérieur - bleu -->
+                <div class="service-card glass cyan-card" data-reveal>
+                    <div class="service-tag-wrap">
+                        <span class="service-tag">Prestation Ext&eacute;rieure</span>
+                    </div>
+                    <div class="service-includes">
+                        <span class="includes-label">Ce qui est possible :</span>
+                        <ul>
+                            <li>Pr&eacute;-lavage et d&eacute;contamination carrosserie</li>
+                            <li>Lavage des jantes</li>
+                            <li>Lavage de la carrosserie &agrave; la mitaine</li>
+                            <li>Pose de cire c&eacute;ramique carrosserie (3 mois)</li>
+                            <li>Pose de c&eacute;ramique vitres (1 an)</li>
+                        </ul>
+                    </div>
+                    <div class="service-price">
+                        <span class="price-range">70&euro; &mdash; 110&euro;</span>
+                        <span class="price-note">selon v&eacute;hicule</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-badge">Demander un devis</span>
+                        <a href="https://wa.me/33781861695" class="service-link" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="services-note" data-reveal>Chaque v&eacute;hicule est unique &mdash; contactez-nous pour un devis 100% personnalis&eacute;.</p>
+        </div>
+    </section>
+
+    <!-- Compteurs -->
+    <section class="counters">
+        <div class="container">
+            <div class="counters-grid">
+                <div class="counter-item" data-reveal>
+                    <span class="counter-value" data-target="100">0</span><span class="counter-suffix">+</span>
+                    <p>Prestations r&eacute;alis&eacute;es</p>
+                </div>
+                <div class="counter-item" data-reveal>
+                    <span class="counter-value" data-target="100">0</span><span class="counter-suffix">%</span>
+                    <p>Clients satisfaits</p>
+                </div>
+                <div class="counter-item" data-reveal>
+                    <span class="counter-value" data-target="7">0</span><span class="counter-suffix"> jours</span>
+                    <p>D&eacute;lai max d'intervention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours Client -->
+    <section class="parcours" id="parcours">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <h2 class="section-title">Comment <span class="accent">&ccedil;a marche</span></h2>
+                <p class="section-subtitle">5 &eacute;tapes simples pour un v&eacute;hicule comme neuf.</p>
+            </div>
+            <div class="parcours-timeline" id="parcoursTimeline">
+                <div class="timeline-line"></div>
+                <!-- Étape 1 : Contact - icône téléphone -->
+                <div class="parcours-step">
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <div class="step-content glass">
+                        <span class="step-tag">&Eacute;tape 01</span>
+                        <h3>Prise de contact</h3>
+                        <p>Vous nous contactez par WhatsApp ou t&eacute;l&eacute;phone pour nous parler de votre v&eacute;hicule.</p>
+                    </div>
+                </div>
+                <!-- Étape 2 : Besoin - icône loupe/diagnostic -->
+                <div class="parcours-step">
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                    <div class="step-content glass">
+                        <span class="step-tag">&Eacute;tape 02</span>
+                        <h3>Diagnostic du v&eacute;hicule</h3>
+                        <p>On &eacute;change sur l'&eacute;tat de votre v&eacute;hicule, les probl&egrave;mes &agrave; traiter et vos attentes.</p>
+                    </div>
+                </div>
+                <!-- Étape 3 : Devis - icône document -->
+                <div class="parcours-step">
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                    </div>
+                    <div class="step-content glass">
+                        <span class="step-tag">&Eacute;tape 03</span>
+                        <h3>Devis personnalis&eacute;</h3>
+                        <p>On vous propose la formule la plus adapt&eacute;e avec un devis clair, transparent et sans surprise.</p>
+                    </div>
+                </div>
+                <!-- Étape 4 : RDV - icône calendrier -->
+                <div class="parcours-step">
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <div class="step-content glass">
+                        <span class="step-tag">&Eacute;tape 04</span>
+                        <h3>Rendez-vous fix&eacute;</h3>
+                        <p>On convient d'une date et d'un lieu qui vous arrangent &mdash; chez vous ou sur votre lieu de travail.</p>
+                    </div>
+                </div>
+                <!-- Étape 5 : Prestation - icône sparkle/étoile -->
+                <div class="parcours-step">
+                    <div class="step-number">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4 5.6 21.2 8 14l-6-4.8h7.6z"/></svg>
+                    </div>
+                    <div class="step-content glass">
+                        <span class="step-tag">&Eacute;tape 05</span>
+                        <h3>Prestation &amp; r&eacute;sultat</h3>
+                        <p>On intervient avec nos produits professionnels. Vous r&eacute;cup&eacute;rez un v&eacute;hicule comme neuf. Paiement en fin de prestation avec facture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos - touche personnelle -->
+    <section class="about-section" id="apropos">
+        <div class="container">
+            <div class="about-grid" data-reveal>
+                <div class="about-photo" id="aboutCarousel">
+                    <img src="assets/maxence1.webp" alt="Maxence, fondateur de MK Detailling" class="about-slide active" loading="lazy">
+                    <img src="assets/maxence2.webp" alt="Maxence au travail" class="about-slide" loading="lazy">
+                    <img src="assets/maxence3.webp" alt="Maxence en intervention" class="about-slide" loading="lazy">
+                    <img src="assets/maxence4.webp" alt="Maxence MK Detailling" class="about-slide" loading="lazy">
+                    <div class="about-photo-tag">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <span>Fondateur</span>
+                    </div>
+                    <div class="about-dots">
+                        <span class="about-dot active"></span>
+                        <span class="about-dot"></span>
+                        <span class="about-dot"></span>
+                        <span class="about-dot"></span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-signature">
+                        <span>Maxence</span>
+                        <svg viewBox="0 0 100 30" width="80" height="24" preserveAspectRatio="none">
+                            <path d="M5,20 Q15,5 25,20 T50,20 Q65,10 75,22 T95,18" fill="none" stroke="url(#sigGrad)" stroke-width="2" stroke-linecap="round"/>
+                            <defs><linearGradient id="sigGrad"><stop offset="0%" stop-color="#ff6600"/><stop offset="100%" stop-color="#00c8ff"/></linearGradient></defs>
+                        </svg>
+                    </div>
+                    <h2 class="about-title">La passion automobile <span class="accent">d&egrave;s le plus jeune &acirc;ge.</span></h2>
+                    <p class="about-text">Je suis <strong>Maxence</strong>, fondateur de <strong>MK Detailling</strong>. Depuis toujours passionn&eacute; par les voitures, j'ai d&eacute;cid&eacute; d'en faire mon m&eacute;tier. Mon but : vous offrir un <strong>nettoyage automobile professionnel</strong> avec les meilleurs produits du march&eacute;, le tout &agrave; un tarif accessible, chez vous &agrave; Nancy, Metz ou au Luxembourg.</p>
+                    <p class="about-text">Chaque v&eacute;hicule qui passe entre mes mains, je m'en occupe comme si c'&eacute;tait le mien. Pas de bacl&eacute;, pas de vite fait : du vrai travail de pro.</p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <strong>100%</strong>
+                            <span>Fait main</span>
+                        </div>
+                    </div>
+                    <div class="about-qualities">
+                        <span class="quality-tag">&Agrave; l'&eacute;coute</span>
+                        <span class="quality-tag">Disponible</span>
+                        <span class="quality-tag">Passionn&eacute;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zones Section -->
+    <section class="zones" id="zones">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <h2 class="section-title">Zones <span class="accent">d'intervention</span></h2>
+                <p class="section-subtitle">Nous intervenons sur Nancy (54), Metz (57) et au Luxembourg.</p>
+            </div>
+            <!-- Carte + Infos -->
+            <div class="zones-layout">
+                <!-- Carte -->
+                <div class="france-map-wrapper" data-reveal>
+                    <div class="france-map-3d">
+                        <object data="assets/france-map.svg" type="image/svg+xml" class="france-svg-object" aria-label="Carte Lorraine et Luxembourg avec zones d'intervention"></object>
+                    </div>
+                </div>
+                <!-- Infos à droite / en dessous -->
+                <div class="zones-info-panel" data-reveal>
+                    <div class="zones-info-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1"/></svg>
+                        <span>Prestation &agrave; domicile ou sur votre lieu de travail</span>
+                    </div>
+                    <p class="zones-info-desc">Nous nous d&eacute;pla&ccedil;ons avec tout notre mat&eacute;riel professionnel. Deux pr&eacute;requis :</p>
+                    <div class="prereq-cards">
+                        <div class="prereq-card glass">
+                            <div class="prereq-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+                            </div>
+                            <strong>Point d'eau</strong>
+                            <p>Robinet ext&eacute;rieur ou tuyau d'arrosage</p>
+                        </div>
+                        <div class="prereq-card glass">
+                            <div class="prereq-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            </div>
+                            <strong>Prise de courant</strong>
+                            <p>Prise standard accessible &agrave; proximit&eacute;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CTA FAQ -->
+            <div class="zone-faq" data-reveal>
+                <a href="#faq" class="zone-faq-link glass">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>Vous ne savez pas si vous &ecirc;tes dans la zone ? Consultez notre FAQ</span>
+                    <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Section - Avant/Après grille 2x2 -->
+    <section class="galerie" id="galerie">
+        <div class="container">
+            <div class="section-header" data-reveal>
+
+                <h2 class="section-title">Avant <span class="accent">/</span> Apr&egrave;s</h2>
+                <p class="section-subtitle">Nos r&eacute;sultats de nettoyage auto &mdash; glissez pour r&eacute;v&eacute;ler la transformation.</p>
+            </div>
+            <div class="comparisons-grid">
+                <!-- Slider 1 -->
+                <div class="comparison" data-reveal>
+                    <div class="comparison-slider">
+                        <div class="comparison-before">
+                            <img src="assets/galerie/avant-1.webp" alt="Avant - Jante sale">
+                            <span class="comparison-label label-before">Avant</span>
+                        </div>
+                        <div class="comparison-after">
+                            <img src="assets/galerie/apres-1.webp" alt="Apr&egrave;s - Jante propre">
+                            <span class="comparison-label label-after">Apr&egrave;s</span>
+                        </div>
+                        <div class="comparison-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8l4 4-4 4"/><path d="M6 8l-4 4 4 4"/></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <p class="comparison-caption">Nettoyage jantes &amp; &eacute;triers</p>
+                </div>
+                <!-- Slider 2 -->
+                <div class="comparison" data-reveal>
+                    <div class="comparison-slider">
+                        <div class="comparison-before">
+                            <img src="assets/galerie/avant-2.webp" alt="Avant - Classe G sale">
+                            <span class="comparison-label label-before">Avant</span>
+                        </div>
+                        <div class="comparison-after">
+                            <img src="assets/galerie/apres-2.webp" alt="Apr&egrave;s - Classe G propre">
+                            <span class="comparison-label label-after">Apr&egrave;s</span>
+                        </div>
+                        <div class="comparison-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8l4 4-4 4"/><path d="M6 8l-4 4 4 4"/></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <p class="comparison-caption">Nettoyage ext&eacute;rieur &mdash; Mercedes Classe G</p>
+                </div>
+                <!-- Slider 3 -->
+                <div class="comparison" data-reveal>
+                    <div class="comparison-slider">
+                        <div class="comparison-before">
+                            <img src="assets/galerie/avant-3.webp" alt="Avant - Coffre sale">
+                            <span class="comparison-label label-before">Avant</span>
+                        </div>
+                        <div class="comparison-after">
+                            <img src="assets/galerie/apres-3.webp" alt="Apr&egrave;s - Coffre propre">
+                            <span class="comparison-label label-after">Apr&egrave;s</span>
+                        </div>
+                        <div class="comparison-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8l4 4-4 4"/><path d="M6 8l-4 4 4 4"/></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <p class="comparison-caption">Nettoyage coffre int&eacute;rieur</p>
+                </div>
+                <!-- Slider 4 - placeholder -->
+                <div class="comparison" data-reveal>
+                    <div class="comparison-slider">
+                        <div class="comparison-before">
+                            <img src="assets/galerie/avant-4.webp" alt="Avant">
+                            <span class="comparison-label label-before">Avant</span>
+                        </div>
+                        <div class="comparison-after">
+                            <img src="assets/galerie/apres-4.webp" alt="Apr&egrave;s">
+                            <span class="comparison-label label-after">Apr&egrave;s</span>
+                        </div>
+                        <div class="comparison-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8l4 4-4 4"/><path d="M6 8l-4 4 4 4"/></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <p class="comparison-caption">Nettoyage int&eacute;rieur &mdash; Porsche Cayenne S</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis clients draggable -->
+    <section class="reviews-section" id="avis">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <h2 class="section-title">Ce qu'ils <span class="accent">en disent</span></h2>
+                <p class="section-subtitle">Glissez pour lire tous les retours &mdash; des clients satisfaits &agrave; Nancy, Metz et au Luxembourg.</p>
+            </div>
+        </div>
+        <div class="reviews-drag-wrapper" id="reviewsDrag">
+            <div class="reviews-track" id="reviewsTrack">
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Ma voiture n'a jamais &eacute;t&eacute; aussi propre. Maxence est venu &agrave; domicile, ponctuel et super pro. Je recommande &agrave; 100% sur Nancy."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #ff6600, #ff8533);">J</div>
+                        <div>
+                            <strong>Julien M.</strong>
+                            <span>Nancy &mdash; BMW S&eacute;rie 3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"R&eacute;sultat dingue sur mon SUV apr&egrave;s 2 ans sans lavage s&eacute;rieux. Un vrai nettoyage auto professionnel, pas juste un lavage."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #00c8ff, #0099cc);">S</div>
+                        <div>
+                            <strong>Sarah L.</strong>
+                            <span>Metz &mdash; Audi Q5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Prix correct, travail impeccable. Les plastiques int&eacute;rieurs sont comme neufs. Je ne ferai plus appel &agrave; personne d'autre."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #ff6600, #cc4400);">T</div>
+                        <div>
+                            <strong>Thomas R.</strong>
+                            <span>Nancy &mdash; Peugeot 3008</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"La c&eacute;ramique sur mes vitres a chang&eacute; ma vie quand il pleut. Service haut de gamme &agrave; un tarif honn&ecirc;te."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #00c8ff, #006699);">M</div>
+                        <div>
+                            <strong>Marc D.</strong>
+                            <span>Luxembourg &mdash; Porsche Cayenne</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"On dirait qu'elle sort du concessionnaire. Maxence a pris le temps d'expliquer chaque &eacute;tape. Bravo !"</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #ff6600, #ffaa66);">L</div>
+                        <div>
+                            <strong>Laura B.</strong>
+                            <span>Nancy &mdash; Mercedes Classe A</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Injection-extraction des si&egrave;ges tissus : r&eacute;sultat bluffant. Mon v&eacute;hicule avait 120 000 km, il a l'air neuf dedans."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #00c8ff, #33ddff);">N</div>
+                        <div>
+                            <strong>Nicolas P.</strong>
+                            <span>Metz &mdash; Renault Kadjar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Intervention &agrave; la maison pendant que je travaillais. Z&eacute;ro souci. Je le conseille &agrave; tous mes coll&egrave;gues."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #ff6600, #ffcc99);">C</div>
+                        <div>
+                            <strong>C&eacute;dric V.</strong>
+                            <span>Nancy &mdash; Tesla Model 3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card glass">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Rapport qualit&eacute;/prix imbattable. J'ai compar&eacute; avec plusieurs stations de nettoyage, aucune ne fait ce travail."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: linear-gradient(135deg, #00c8ff, #99eeff);">A</div>
+                        <div>
+                            <strong>Amandine K.</strong>
+                            <span>Luxembourg &mdash; Volkswagen Golf</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-hint">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 9l4-4 4 4M16 15l-4 4-4-4"/><path d="M3 12h18" transform="rotate(90 12 12)"/></svg>
+                Glissez pour voir plus d'avis
+            </div>
+        </div>
+    </section>
+
+    <!-- Marques traitées -->
+    <div class="brands-bar">
+        <div class="container">
+            <p class="brands-label" data-reveal>Ils nous ont fait confiance</p>
+            <div class="brands-track">
+                <span class="brand-name">PORSCHE</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">MERCEDES</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">BMW</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">AUDI</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">VOLKSWAGEN</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">TESLA</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">PEUGEOT</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">RENAULT</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">PORSCHE</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">MERCEDES</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">BMW</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">AUDI</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">VOLKSWAGEN</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">TESLA</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">PEUGEOT</span>
+                <span class="brand-sep">&bull;</span>
+                <span class="brand-name">RENAULT</span>
+                <span class="brand-sep">&bull;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Réseaux Sociaux Section -->
+    <section class="socials-section" id="reseaux">
+        <div class="container">
+            <div class="section-header" data-reveal>
+
+                <h2 class="section-title">Suivez-nous sur les <span class="accent">r&eacute;seaux</span></h2>
+                <p class="section-subtitle">Nos r&eacute;els, nos r&eacute;sultats, nos coulisses.</p>
+            </div>
+            <!-- 3 vidéos en ligne -->
+            <div class="reels-row">
+                <div class="reel-video" data-reveal>
+                    <video src="assets/video-1.mov" autoplay muted loop playsinline></video>
+                    <div class="reel-overlay">
+                        <div class="reel-sound-btn" aria-label="Activer le son">
+                            <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                            <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+                        </div>
+                    </div>
+                    <div class="reel-sound-hint"><svg class="hint-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>Active le son</div>
+                </div>
+                <div class="reel-video" data-reveal>
+                    <video src="assets/video-2.mov" autoplay muted loop playsinline></video>
+                    <div class="reel-overlay">
+                        <div class="reel-sound-btn" aria-label="Activer le son">
+                            <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                            <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+                        </div>
+                    </div>
+                    <div class="reel-sound-hint"><svg class="hint-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>Active le son</div>
+                </div>
+                <div class="reel-video" data-reveal>
+                    <video src="assets/video-3.mov" autoplay muted loop playsinline></video>
+                    <div class="reel-overlay">
+                        <div class="reel-sound-btn" aria-label="Activer le son">
+                            <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                            <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+                        </div>
+                    </div>
+                    <div class="reel-sound-hint"><svg class="hint-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>Active le son</div>
+                </div>
+            </div>
+            <!-- CTA Réseaux -->
+            <div class="socials-cta" data-reveal>
+                <p class="socials-cta-text">Retrouvez plus de contenus &amp; abonnez-vous</p>
+                <div class="socials-cta-links">
+                    <a href="https://www.instagram.com/mkdetailling_/" target="_blank" rel="noopener" class="social-cta-btn instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span>Instagram</span>
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@mkdetailing__" target="_blank" rel="noopener" class="social-cta-btn tiktok">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.27 8.27 0 005.58 2.17V11.7a4.85 4.85 0 01-3.77-1.78V6.69h3.77z"/></svg>
+                        <span>TikTok</span>
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Easter Egg cadeau -->
+            <div class="easter-gift" id="easterGift">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2" fill="url(#giftGrad)" stroke="rgba(255,255,255,0.3)"/>
+                    <path d="M12 11v11" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+                    <path d="M3 15h18" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                    <path d="M7.5 11C7.5 11 7 7 9.5 7s3 4 2.5 4M16.5 11c0 0 .5-4-2-4s-3 4-2.5 4" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="2" y="8" width="20" height="3" rx="1" fill="var(--orange)" opacity="0.8"/>
+                    <defs><linearGradient id="giftGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff6600" stop-opacity="0.3"/><stop offset="100%" stop-color="#00c8ff" stop-opacity="0.2"/></linearGradient></defs>
+                </svg>
+                <div class="gift-sparkle"></div>
+                <div class="gift-sparkle gift-sparkle-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup jeu concours -->
+    <div class="gift-popup" id="giftPopup">
+        <div class="gift-popup-content glass">
+            <button class="gift-popup-close" id="giftClose">&times;</button>
+            <div class="gift-popup-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2" fill="rgba(255,102,0,0.15)"/>
+                    <path d="M7.5 11C7.5 11 7 7 9.5 7s3 4 2.5 4M16.5 11c0 0 .5-4-2-4s-3 4-2.5 4" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="2" y="8" width="20" height="3" rx="1" fill="var(--orange)" opacity="0.6"/>
+                </svg>
+            </div>
+            <h3>Un jeu concours arrive bient&ocirc;t !</h3>
+            <p>Bons cadeaux, prestations gratuites, cash... Abonnez-vous sur nos r&eacute;seaux pour <strong>ne rien rater et tenter votre chance</strong>.</p>
+            <div class="gift-popup-ctas">
+                <a href="https://www.instagram.com/mkdetailling_/" target="_blank" rel="noopener" class="gift-cta-btn instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    Instagram
+                </a>
+                <a href="https://www.tiktok.com/@mkdetailing__" target="_blank" rel="noopener" class="gift-cta-btn tiktok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.27 8.27 0 005.58 2.17V11.7a4.85 4.85 0 01-3.77-1.78V6.69h3.77z"/></svg>
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <div class="container">
+            <div class="section-header" data-reveal>
+
+                <h2 class="section-title">D&eacute;couvrez <span class="accent">MK Detailling</span></h2>
+                <p class="section-subtitle">Notre passion, notre savoir-faire.</p>
+            </div>
+            <div class="video-wrapper" data-reveal>
+                <div class="video-placeholder">
+                    <img src="assets/logo.png" alt="MK Detailling" class="video-logo">
+                    <div class="video-play-btn">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <p class="video-coming">Vid&eacute;o de pr&eacute;sentation &mdash; bient&ocirc;t disponible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-reveal>
+
+                <h2 class="section-title">Parlons de votre <span class="accent">projet</span></h2>
+                <p class="section-subtitle">Un &eacute;change rapide pour comprendre vos besoins et vous proposer le meilleur.</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://wa.me/33781861695" target="_blank" rel="noopener" class="contact-card glass" data-reveal>
+                    <div class="contact-icon whatsapp">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Discutons de votre projet</p>
+                    <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+                <a href="tel:0781861695" class="contact-card glass" data-reveal>
+                    <div class="contact-icon phone">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <h3>T&eacute;l&eacute;phone</h3>
+                    <p>07 81 86 16 95</p>
+                    <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <h2 class="section-title">Questions <span class="accent">fr&eacute;quentes</span></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item glass" data-reveal>
+                    <button class="faq-question">
+                        <span>Suis-je dans votre zone d'intervention ?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nous intervenons dans un rayon d'environ 20 km autour de Nancy, Metz et Luxembourg-Ville. Si vous avez un doute, contactez-nous par WhatsApp ou t&eacute;l&eacute;phone et nous vous confirmerons rapidement.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass" data-reveal>
+                    <button class="faq-question">
+                        <span>De quoi avez-vous besoin pour intervenir ?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nous nous d&eacute;pla&ccedil;ons avec tout notre mat&eacute;riel. Il nous faut simplement un acc&egrave;s &agrave; un point d'eau et une prise de courant sur place.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass" data-reveal>
+                    <button class="faq-question">
+                        <span>Combien co&ucirc;te une prestation ?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Chaque v&eacute;hicule est diff&eacute;rent. Nous &eacute;tablissons un devis personnalis&eacute; apr&egrave;s &eacute;change sur vos besoins. Contactez-nous pour un devis gratuit et sans engagement.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass" data-reveal>
+                    <button class="faq-question">
+                        <span>Quels produits utilisez-vous ?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nous utilisons exclusivement des produits professionnels haut de gamme, s&eacute;lectionn&eacute;s parmi les meilleurs du march&eacute;, pour garantir un r&eacute;sultat optimal sans ab&icirc;mer votre v&eacute;hicule.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass" data-reveal>
+                    <button class="faq-question">
+                        <span>Intervenez-vous sur tous types de v&eacute;hicules ?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui, nous intervenons sur tous les v&eacute;hicules : citadines, berlines, SUV, utilitaires, sportives, prestige... Premium ou non, chaque voiture m&eacute;rite un traitement professionnel.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass" data-reveal>
+                    <button class="faq-question">
+                        <span>Combien de temps dure une prestation ?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cela d&eacute;pend de la prestation choisie et de l'&eacute;tat du v&eacute;hicule. Comptez entre 1h30 et 5h pour une prestation compl&egrave;te. Nous vous pr&eacute;ciserons la dur&eacute;e lors du devis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <img src="assets/logo.png" alt="MK Detailling" class="footer-logo">
+                <p class="footer-slogan">Par des passionn&eacute;s, pour des passionn&eacute;s.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/mkdetailling_/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@mkdetailing__" target="_blank" rel="noopener" aria-label="TikTok" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.27 8.27 0 005.58 2.17V11.7a4.85 4.85 0 01-3.77-1.78V6.69h3.77z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MK Detailling &mdash; Tous droits r&eacute;serv&eacute;s &mdash; Con&ccedil;u avec passion &agrave; Nancy</p>
+                <div class="footer-legal">
+                    <a href="mentions-legales.html">Mentions l&eacute;gales</a>
+                    <a href="confidentialite.html">Politique de confidentialit&eacute;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/33781861695" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Easter Egg (déplacé dans la section parcours via JS) -->
+    <div class="easter-egg" id="easterEgg" aria-label="Surprise">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" fill="url(#dropGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+            <defs>
+                <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#38b6ff" stop-opacity="0.7"/>
+                    <stop offset="100%" stop-color="#00c8ff" stop-opacity="0.4"/>
+                </linearGradient>
+            </defs>
+            <ellipse cx="10" cy="10" rx="2.5" ry="1.5" fill="rgba(255,255,255,0.25)" transform="rotate(-30 10 10)"/>
+        </svg>
+        <div class="easter-sparkle"></div>
+    </div>
+
+    <!-- Pop-up parrainage -->
+    <div class="easter-popup" id="easterPopup">
+        <div class="easter-popup-content glass">
+            <button class="easter-popup-close" id="easterClose">&times;</button>
+            <div class="easter-popup-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+            </div>
+            <h3>Bravo, tu as trouv&eacute; la goutte cach&eacute;e !</h3>
+            <p>Recommande-nous &agrave; un de tes proches et <strong>10% du montant de son devis te reviennent</strong>.</p>
+            <a href="https://wa.me/33781861695?text=Hello%20!%20Je%20viens%20de%20trouver%20la%20goutte%20sur%20votre%20site%20%F0%9F%92%A7%20Je%20souhaite%20parrainer%20un%20proche%20!" class="easter-popup-cta" target="_blank" rel="noopener">
+                Parrainer par WhatsApp
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- CTA Sticky Mobile -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="https://wa.me/33781861695" target="_blank" rel="noopener" class="sticky-cta-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Devis gratuit
+        </a>
+        <a href="tel:0781861695" class="sticky-cta-btn sticky-cta-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Appeler
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
