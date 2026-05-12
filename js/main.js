@@ -241,12 +241,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Pause videos not in viewport for performance ---
+    // --- Lazy load + pause reels videos for performance (économise bande passante) ---
     const reelVideos = document.querySelectorAll('.reel-video video');
     if (reelVideos.length) {
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Charger la vidéo seulement quand elle entre dans le viewport
+                    if (entry.target.dataset.src && !entry.target.src) {
+                        entry.target.src = entry.target.dataset.src;
+                        entry.target.load();
+                    }
                     entry.target.play().catch(() => {});
                 } else {
                     entry.target.pause();
@@ -255,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (wrapper) wrapper.classList.remove('unmuted');
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.3, rootMargin: '200px' });
         reelVideos.forEach(v => videoObserver.observe(v));
     }
 
