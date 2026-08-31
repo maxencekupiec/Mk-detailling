@@ -3673,6 +3673,8 @@ section, footer, .marquee {
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
+    /* Libère la couche GPU une fois l'animation terminée */
+    will-change: auto;
 }
 
 /* Stagger children */
@@ -3800,14 +3802,21 @@ section, footer, .marquee {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* Carte prestation vedette : halo respirant */
-.service-card.featured {
+/* Carte prestation vedette : halo respirant (via opacité = pas de repaint) */
+.service-card.featured .featured-halo {
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 40px rgba(255,102,0,0.09);
+    opacity: 0;
     animation: featuredBreath 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
 }
 
 @keyframes featuredBreath {
-    0%, 100% { box-shadow: 0 0 0 rgba(255,102,0,0); }
-    50% { box-shadow: 0 8px 40px rgba(255,102,0,0.09); }
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 /* Sticky CTA mobile : safe area iPhone */
@@ -3874,4 +3883,50 @@ section, footer, .marquee {
         transform: none;
         filter: none;
     }
+}
+
+/* ============================
+   ALLÈGEMENTS PERFORMANCE
+   ============================ */
+
+/* Mobile : backdrop-filter coupé (quasi invisible sur fond sombre, très coûteux en GPU) */
+@media (max-width: 768px) {
+    .glass,
+    .navbar.scrolled,
+    .marquee,
+    .hero-badge,
+    .reel-sound-btn,
+    .reel-sound-hint,
+    .sticky-cta {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .navbar.scrolled { background: rgba(5,5,5,0.92); }
+    .sticky-cta { background: rgba(5,5,5,0.96); }
+
+    /* Reveals plus légers sur mobile : pas de flou, juste fondu + translation */
+    [data-reveal] {
+        filter: none;
+        transform: translateY(24px);
+    }
+
+    [data-reveal].revealed {
+        filter: none;
+    }
+
+    .parcours-step {
+        filter: none !important;
+    }
+
+    /* Grain + orbes réduits sur mobile */
+    .grain { opacity: 0.02; }
+    .bg-orb-3, .bg-orb-4 { display: none; }
+}
+
+/* Les images de la galerie décodent hors thread principal */
+.comparison-slider img,
+.about-slide,
+.reel-video video {
+    content-visibility: visible;
 }

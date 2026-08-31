@@ -68,15 +68,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Navbar scroll ---
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
+    // --- Dispatcher de scroll unique, throttlé par rAF (perf) ---
+    // Tous les effets liés au scroll s'enregistrent ici : un seul listener,
+    // un seul rendu par frame, zéro jank.
+    const scrollTasks = [];
+    let scrollTicking = false;
+
+    function onScrollRaf(fn) {
+        scrollTasks.push(fn);
+    }
+
+    function runScrollTasks() {
+        const sy = window.scrollY;
+        for (let i = 0; i < scrollTasks.length; i++) scrollTasks[i](sy);
+        scrollTicking = false;
+    }
 
     window.addEventListener('scroll', () => {
-        const sy = window.scrollY;
-        navbar.classList.toggle('scrolled', sy > 60);
-        lastScroll = sy;
+        if (!scrollTicking) {
+            scrollTicking = true;
+            requestAnimationFrame(runScrollTasks);
+        }
     }, { passive: true });
+
+    // --- Navbar scroll ---
+    const navbar = document.getElementById('navbar');
+
+    onScrollRaf((sy) => {
+        navbar.classList.toggle('scrolled', sy > 60);
+    });
 
     // --- Mobile menu ---
     const navToggle = document.getElementById('nav-toggle');
@@ -113,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    onScrollRaf(updateActiveNav);
 
     // --- Scroll Reveal with IntersectionObserver ---
     const revealElements = document.querySelectorAll('[data-reveal]:not(.hero [data-reveal])');
@@ -159,6 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Halo respirant de la carte vedette (couche dédiée, pas de repaint) ---
+    const featuredCard = document.querySelector('.service-card.featured');
+    if (featuredCard) {
+        const halo = document.createElement('div');
+        halo.classList.add('featured-halo');
+        featuredCard.prepend(halo);
+    }
+
     // --- Magnetic button effect ---
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
         document.querySelectorAll('.magnetic').forEach(btn => {
@@ -180,20 +208,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Background orbs parallax on scroll ---
     const orbs = document.querySelectorAll('.bg-orb');
     if (orbs.length) {
-        window.addEventListener('scroll', () => {
-            const sy = window.scrollY;
-            const speeds = [0.03, -0.02, 0.025, -0.015];
-            orbs.forEach((orb, i) => {
-                const speed = speeds[i] || 0.02;
-                orb.style.transform = `translateY(${sy * speed}px)`;
-            });
-        }, { passive: true });
+        const orbSpeeds = [0.03, -0.02, 0.025, -0.015];
+        onScrollRaf((sy) => {
+            for (let i = 0; i < orbs.length; i++) {
+                orbs[i].style.transform = `translateY(${sy * (orbSpeeds[i] || 0.02)}px)`;
+            }
+        });
     }
 
-    // --- Generate floating particles ---
+    // --- Mobile : ne pas charger les vidéos hero cachées (2 et 3) ---
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+        document.querySelectorAll('.hero-video-wall video:nth-child(n+2)').forEach(v => {
+            v.preload = 'none';
+            v.autoplay = false;
+            v.querySelectorAll('source').forEach(s => s.removeAttribute('src'));
+            v.load();
+        });
+    }
+
+    // --- Generate floating particles (moins sur mobile) ---
     const particlesContainer = document.getElementById('particles');
     if (particlesContainer) {
-        for (let i = 0; i < 30; i++) {
+        const particleCount = isMobile ? 14 : 30;
+        for (let i = 0; i < particleCount; i++) {
             const p = document.createElement('div');
             p.classList.add('particle');
             p.style.left = Math.random() * 100 + '%';
@@ -210,12 +248,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Parallax hero gradient ---
     const heroGradient = document.querySelector('.hero-gradient');
     if (heroGradient) {
-        window.addEventListener('scroll', () => {
-            const sy = window.scrollY;
+        onScrollRaf((sy) => {
             if (sy < window.innerHeight) {
                 heroGradient.style.transform = `translateY(${sy * 0.3}px) scale(${1 + sy * 0.0002})`;
             }
-        }, { passive: true });
+        });
     }
 
     // --- Reel sound hint tooltip ---
@@ -323,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
         style.textContent = `.timeline-line::after { height: var(--progress, 0%) !important; }`;
         document.head.appendChild(style);
 
-        window.addEventListener('scroll', updateTimeline, { passive: true });
+        onScrollRaf(updateTimeline);
         updateTimeline();
     }
 
@@ -354,25 +391,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Sticky CTA mobile ---
     const stickyCta = document.getElementById('stickyCta');
     if (stickyCta) {
-        window.addEventListener('scroll', () => {
-            stickyCta.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
-        }, { passive: true });
+        onScrollRaf((sy) => {
+            stickyCta.classList.toggle('visible', sy > window.innerHeight * 0.5);
+        });
     }
 
-    // --- Parallaxe galerie ---
+    // --- Parallaxe galerie (images mises en cache, skip hors écran) ---
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        const compSliders = document.querySelectorAll('.comparison-slider');
-        window.addEventListener('scroll', () => {
-            compSliders.forEach(slider => {
-                const rect = slider.getBoundingClientRect();
-                const center = rect.top + rect.height / 2;
-                const offset = (center - window.innerHeight / 2) * 0.05;
-                const imgs = slider.querySelectorAll('img');
-                imgs.forEach(img => {
-                    img.style.transform = `translateY(${offset}px) scale(1.05)`;
-                });
+        const compSliders = Array.from(document.querySelectorAll('.comparison-slider')).map(slider => ({
+            el: slider,
+            imgs: slider.querySelectorAll('img')
+        }));
+        if (compSliders.length) {
+            onScrollRaf(() => {
+                const winH = window.innerHeight;
+                for (const s of compSliders) {
+                    const rect = s.el.getBoundingClientRect();
+                    // Skip si le slider est loin du viewport
+                    if (rect.bottom < -200 || rect.top > winH + 200) continue;
+                    const offset = (rect.top + rect.height / 2 - winH / 2) * 0.05;
+                    for (const img of s.imgs) {
+                        img.style.transform = `translateY(${offset}px) scale(1.05)`;
+                    }
+                }
             });
-        }, { passive: true });
+        }
     }
 
     // --- Carousel auto "À propos" ---
