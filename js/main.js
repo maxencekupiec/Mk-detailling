@@ -364,29 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTimeline();
     }
 
-    // --- Compteurs animés ---
-    const counterEls = document.querySelectorAll('.counter-value[data-target]');
-    if (counterEls.length) {
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.dataset.target);
-                    const duration = 2000;
-                    const start = performance.now();
-                    function step(now) {
-                        const t = Math.min(1, (now - start) / duration);
-                        const eased = 1 - Math.pow(1 - t, 3);
-                        el.textContent = Math.floor(eased * target);
-                        if (t < 1) requestAnimationFrame(step);
-                    }
-                    requestAnimationFrame(step);
-                    counterObserver.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        counterEls.forEach(el => counterObserver.observe(el));
-    }
 
     // --- Sticky CTA mobile ---
     const stickyCta = document.getElementById('stickyCta');

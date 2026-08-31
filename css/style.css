@@ -1364,71 +1364,6 @@ section, footer, .marquee {
     background: transparent;
 }
 
-/* ============================
-   COMPTEURS
-   ============================ */
-.counters {
-    padding: 56px 0;
-    background: transparent;
-}
-
-.counters-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.counter-item {
-    padding: 24px 16px;
-}
-
-.counter-value {
-    font-family: var(--font-heading);
-    font-size: 3.2rem;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 0 18px rgba(255,102,0,0.18));
-}
-
-.counter-item {
-    transition: transform 0.4s var(--ease);
-}
-
-.counter-item:hover {
-    transform: translateY(-3px);
-}
-
-.counter-suffix {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--gray-5);
-}
-
-.counter-item p {
-    font-size: 0.8rem;
-    color: var(--gray-4);
-    font-weight: 300;
-    margin-top: 4px;
-}
-
-@media (max-width: 768px) {
-    .counters-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-
-    .counter-value {
-        font-size: 2.4rem;
-    }
-}
 
 /* ============================
    PARCOURS CLIENT
@@ -4228,4 +4163,101 @@ section, footer, .marquee {
     .reassure-sep { display: none; }
 
     .wa-bubble { display: none; }
+}
+
+/* ============================
+   MESSAGES DE MAXENCE (bulles WhatsApp)
+   ============================ */
+.maxence-note {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 12px;
+    max-width: 520px;
+    margin: 36px auto 0;
+}
+
+.note-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #25d366;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+.note-bubble {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px 16px 16px 4px;
+    padding: 12px 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+
+.note-name {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #25d366;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.note-bubble p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--white-soft);
+}
+
+/* La bulle "arrive" comme un vrai message */
+.maxence-note[data-reveal] {
+    transform: translateY(16px) scale(0.96);
+    transform-origin: bottom left;
+}
+
+.maxence-note[data-reveal].revealed {
+    transform: translateY(0) scale(1);
+}
+
+/* ============================
+   CENTRAGE HARMONISÉ
+   ============================ */
+
+/* Réassurance hero : espacement propre sous les CTA */
+.hero-reassure {
+    margin: -52px 0 52px;
+}
+
+/* Le ticket d'atelier parfaitement centré, tampon compris */
+.workshop-ticket { 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+/* Les sections courtes gardent le même rythme vertical */
+.about-section .about-grid,
+.zones-layout,
+.faq-list,
+.contact-grid,
+.comparisons-grid,
+.video-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* La note sous la grille services reste dans l'axe des cartes */
+.services .maxence-note { margin-top: 40px; }
+
+@media (max-width: 768px) {
+    .maxence-note {
+        padding: 0 8px;
+    }
+
+    .hero-reassure {
+        margin: -30px 0 40px;
+    }
 }
