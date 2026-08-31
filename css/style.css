@@ -3931,211 +3931,7 @@ section, footer, .marquee {
     content-visibility: visible;
 }
 
-/* ============================
-   PLAQUES D'IMMATRICULATION (zones)
-   ============================ */
-.plates-row {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 28px;
-}
 
-.plate {
-    display: inline-flex;
-    align-items: stretch;
-    background: #f4f4f2;
-    border: 2px solid #1a1a1a;
-    border-radius: 7px;
-    overflow: hidden;
-    box-shadow:
-        0 2px 0 rgba(0,0,0,0.5),
-        0 10px 24px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.9);
-    transform: rotate(-1deg);
-    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
-    cursor: default;
-}
-
-.plate:nth-child(2) { transform: rotate(0.5deg); }
-.plate:nth-child(3) { transform: rotate(-0.5deg); }
-
-.plate:hover {
-    transform: rotate(0deg) translateY(-4px) scale(1.05);
-    box-shadow:
-        0 2px 0 rgba(0,0,0,0.5),
-        0 18px 36px rgba(0,0,0,0.55),
-        inset 0 1px 0 rgba(255,255,255,0.9);
-}
-
-.plate-eu {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    background: #003399;
-    color: #ffcc00;
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 4px 6px 5px;
-    position: relative;
-}
-
-/* Étoiles européennes suggérées */
-.plate-eu::before {
-    content: '\2022 \2022 \2022';
-    position: absolute;
-    top: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.4rem;
-    letter-spacing: 1px;
-    color: #ffcc00;
-}
-
-.plate-eu-lux {
-    background: #00A1DE;
-    color: #fff;
-}
-
-.plate-eu-lux::before { color: #fff; }
-
-.plate-text {
-    display: flex;
-    align-items: center;
-    padding: 8px 14px;
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #111;
-}
-
-.plate-dept {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    background: #003399;
-    color: #fff;
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 4px 6px 5px;
-}
-
-@media (max-width: 768px) {
-    .plates-row { gap: 10px; }
-    .plate-text { font-size: 0.9rem; padding: 6px 10px; letter-spacing: 2px; }
-}
-
-/* ============================
-   COMPTEURS FAÇON TABLEAU DE BORD
-   ============================ */
-.gauge {
-    position: relative;
-    width: 148px;
-    height: 148px;
-    margin: 0 auto 14px;
-    border-radius: 50%;
-    background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.05), transparent 55%),
-        radial-gradient(circle, var(--dark-2) 60%, var(--gray-1) 100%);
-    border: 1px solid rgba(255,255,255,0.07);
-    box-shadow:
-        inset 0 2px 10px rgba(0,0,0,0.6),
-        0 8px 28px rgba(0,0,0,0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Graduations du cadran (comme un compte-tours) */
-.gauge::before {
-    content: '';
-    position: absolute;
-    inset: 7px;
-    border-radius: 50%;
-    background: repeating-conic-gradient(
-        from -120deg,
-        rgba(255,255,255,0.35) 0deg 1.6deg,
-        transparent 1.6deg 24deg
-    );
-    /* Ne garder que l'arc de -120° à +120° */
-    -webkit-mask:
-        radial-gradient(circle, transparent 58%, black 59%, black 72%, transparent 73%),
-        conic-gradient(from -120deg, black 0deg 240deg, transparent 240deg 360deg);
-    -webkit-mask-composite: source-in;
-    mask:
-        radial-gradient(circle, transparent 58%, black 59%, black 72%, transparent 73%),
-        conic-gradient(from -120deg, black 0deg 240deg, transparent 240deg 360deg);
-    mask-composite: intersect;
-}
-
-/* Zone rouge du compte-tours en orange MK */
-.gauge::after {
-    content: '';
-    position: absolute;
-    inset: 7px;
-    border-radius: 50%;
-    background: conic-gradient(from 75deg, var(--orange) 0deg 45deg, transparent 45deg);
-    -webkit-mask: radial-gradient(circle, transparent 62%, black 63%, black 70%, transparent 71%);
-    mask: radial-gradient(circle, transparent 62%, black 63%, black 70%, transparent 71%);
-    filter: drop-shadow(0 0 6px rgba(255,102,0,0.5));
-}
-
-/* Aiguille qui monte à l'apparition */
-.gauge-needle {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    width: 2.5px;
-    height: 46px;
-    background: linear-gradient(to top, var(--orange), rgba(255,102,0,0.15));
-    border-radius: 3px;
-    transform-origin: bottom center;
-    transform: translateX(-50%) rotate(-120deg);
-    transition: transform 1.8s cubic-bezier(0.34, 1.4, 0.4, 1);
-    box-shadow: 0 0 8px rgba(255,102,0,0.4);
-}
-
-.counter-item.revealed .gauge-needle {
-    transform: translateX(-50%) rotate(112deg);
-}
-
-/* Axe central de l'aiguille */
-.gauge-core {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    line-height: 1;
-}
-
-.gauge-core .counter-value {
-    font-size: 2.2rem;
-    filter: none;
-}
-
-.gauge-core .counter-suffix {
-    font-size: 1rem;
-}
-
-.counter-item p {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.68rem;
-}
-
-@media (max-width: 768px) {
-    .gauge {
-        width: 120px;
-        height: 120px;
-    }
-
-    .gauge-needle { height: 37px; }
-    .gauge-core .counter-value { font-size: 1.8rem; }
-    .counters-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-}
 
 /* ============================
    TICKET D'ATELIER (contact)
@@ -4253,4 +4049,183 @@ section, footer, .marquee {
         65% { transform: translateX(50%) rotate(-10deg) scale(0.94); opacity: 0.9; }
         100% { transform: translateX(50%) rotate(-10deg) scale(1); opacity: 0.85; }
     }
+}
+
+/* ============================
+   PATTERNS CONVERSION (inspirés mirai-tech)
+   ============================ */
+
+/* WhatsApp flottant humanisé : la photo de Maxence */
+.whatsapp-float {
+    background: none;
+    box-shadow: none;
+    width: 58px;
+    height: 58px;
+}
+
+.wa-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid #25d366;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5), 0 0 0 3px rgba(37,211,102,0.15);
+    transition: box-shadow 0.3s var(--ease);
+}
+
+.whatsapp-float:hover .wa-avatar {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 0 5px rgba(37,211,102,0.25);
+}
+
+/* Badge WhatsApp en coin */
+.wa-badge {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #25d366;
+    border: 2.5px solid var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Pastille "en ligne" */
+.wa-online {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2.5px solid var(--dark);
+    animation: pulseDot 2s infinite;
+}
+
+/* Bulle "Maxence vous répond" */
+.wa-bubble {
+    position: absolute;
+    right: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+    background: rgba(18,18,18,0.95);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px 12px 4px 12px;
+    padding: 9px 16px;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.whatsapp-float:hover .wa-bubble {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Réassurance sous les CTA hero */
+.hero-reassure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: -28px 0 48px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(240,240,240,0.6);
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+.reassure-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tick-mini {
+    color: #22c55e;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.reassure-sep {
+    color: rgba(240,240,240,0.25);
+}
+
+/* Fin de FAQ : porte ouverte */
+.faq-more {
+    text-align: center;
+    margin-top: 36px;
+}
+
+.faq-more > p {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--white);
+}
+
+.faq-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px 10px 10px;
+    border-radius: 60px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--gray-5);
+    transition: all 0.35s var(--ease);
+}
+
+.faq-more-btn:hover {
+    color: var(--white);
+    border-color: rgba(37,211,102,0.4);
+    background: rgba(37,211,102,0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(37,211,102,0.12);
+}
+
+.faq-more-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #25d366;
+}
+
+.faq-more-btn svg {
+    opacity: 0.5;
+    transition: all 0.3s var(--ease);
+}
+
+.faq-more-btn:hover svg {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+    .hero-reassure {
+        flex-direction: column;
+        gap: 6px;
+        margin: -20px 0 36px;
+    }
+
+    .reassure-sep { display: none; }
+
+    .wa-bubble { display: none; }
 }
