@@ -145,6 +145,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Spotlight curseur sur les cartes services ---
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        document.querySelectorAll('.service-card').forEach(card => {
+            const spot = document.createElement('div');
+            spot.classList.add('card-spotlight');
+            card.prepend(spot);
+            card.addEventListener('mousemove', (e) => {
+                const r = card.getBoundingClientRect();
+                card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+                card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+            });
+        });
+    }
+
     // --- Magnetic button effect ---
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
         document.querySelectorAll('.magnetic').forEach(btn => {
