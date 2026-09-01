@@ -4261,3 +4261,92 @@ section, footer, .marquee {
         margin: -30px 0 40px;
     }
 }
+
+/* ============================
+   BULLES EXCENTRÉES + CTA FLOTTANT ANIMÉ
+   ============================ */
+
+/* Les bulles se répartissent sur les côtés, comme une vraie conversation */
+.services .maxence-note {
+    margin-left: 0;
+    margin-right: auto;
+    justify-content: flex-start;
+}
+
+.parcours .maxence-note {
+    margin-left: auto;
+    margin-right: 0;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+/* Bulle de droite : queue en bas à droite, avatar à droite */
+.parcours .maxence-note .note-bubble {
+    border-radius: 16px 16px 4px 16px;
+}
+
+/* Entrées latérales : chaque bulle glisse depuis son côté */
+.services .maxence-note[data-reveal] {
+    transform: translateX(-36px) scale(0.96);
+}
+
+.parcours .maxence-note[data-reveal] {
+    transform: translateX(36px) scale(0.96);
+    transform-origin: bottom right;
+}
+
+.services .maxence-note[data-reveal].revealed,
+.parcours .maxence-note[data-reveal].revealed {
+    transform: translateX(0) scale(1);
+}
+
+/* Anneau vert qui pulse en continu autour du bouton flottant */
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2.5px solid rgba(37, 211, 102, 0.65);
+    opacity: 0;
+    animation: waPing 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes waPing {
+    0% { transform: scale(0.92); opacity: 0.85; }
+    70% { transform: scale(1.45); opacity: 0; }
+    100% { transform: scale(1.45); opacity: 0; }
+}
+
+/* La bulle "Maxence vous répond" se montre toute seule périodiquement */
+.whatsapp-float.visible .wa-bubble {
+    animation: waPeek 14s ease-in-out infinite 5s;
+}
+
+@keyframes waPeek {
+    0%, 76%, 100% { opacity: 0; transform: translateY(-50%) translateX(8px); }
+    80%, 94% { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+
+/* Au survol : la bulle reste affichée, les animations laissent la main */
+.whatsapp-float:hover .wa-bubble {
+    animation: none;
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.whatsapp-float:hover::before {
+    animation: none;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .services .maxence-note,
+    .parcours .maxence-note {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .services .maxence-note { justify-content: flex-start; }
+    .parcours .maxence-note { justify-content: flex-end; }
+}
