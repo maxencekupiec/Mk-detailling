@@ -4243,58 +4243,6 @@ section, footer, .marquee {
 
 
 
-/* ============================
-   PASTILLES MAXENCE (discrètes, en marge du texte)
-   ============================ */
-.maxence-chip-wrap {
-    display: flex;
-    margin-top: 22px;
-}
-
-.chip-right { justify-content: flex-end; }
-.chip-left { justify-content: flex-start; }
-
-.maxence-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 5px 15px 5px 6px;
-    border-radius: 60px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--glass-border);
-    font-family: var(--font-heading);
-    font-size: 0.76rem;
-    font-weight: 500;
-    color: var(--gray-5);
-    letter-spacing: 0.2px;
-    transition: all 0.35s var(--ease);
-}
-
-.maxence-chip img {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1.5px solid #25d366;
-    flex-shrink: 0;
-}
-
-.maxence-chip:hover {
-    color: var(--white);
-    border-color: rgba(37,211,102,0.35);
-    background: rgba(37,211,102,0.05);
-    transform: translateY(-1px);
-}
-
-/* Entrée discrète depuis leur côté */
-.chip-right[data-reveal] { transform: translateX(20px); }
-.chip-left[data-reveal] { transform: translateX(-20px); }
-.chip-right[data-reveal].revealed,
-.chip-left[data-reveal].revealed { transform: translateX(0); }
-
-@media (max-width: 768px) {
-    .maxence-chip { font-size: 0.72rem; }
-}
 
 /* ============================
    CONFIGURATEUR DEVIS
@@ -4466,7 +4414,7 @@ section, footer, .marquee {
     color: var(--white);
 }
 
-.config-step[data-step="3"] {
+.config-step[data-step="4"] {
     text-align: center;
 }
 
