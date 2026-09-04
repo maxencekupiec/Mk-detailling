@@ -159,7 +159,7 @@ section, footer, .marquee {
 }
 
 .line-1 span {
-    animation-delay: 0.3s;
+    animation-delay: 0.1s;
 }
 
 .line-3 span {
@@ -170,7 +170,7 @@ section, footer, .marquee {
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 16px;
-    animation-delay: 0.9s;
+    animation-delay: 0.45s;
 }
 
 @keyframes slideUp {
@@ -199,7 +199,7 @@ section, footer, .marquee {
 }
 
 .loader.exit {
-    animation: loaderFadeOut 0.6s var(--ease) 0.5s forwards;
+    animation: loaderFadeOut 0.5s var(--ease) 0.25s forwards;
 }
 
 @keyframes loaderFadeOut {
@@ -4528,4 +4528,16 @@ section, footer, .marquee {
         text-align: center;
         gap: 8px;
     }
+}
+
+/* Paragraphe SEO du footer, discret */
+.footer-seo {
+    max-width: 640px;
+    margin: 0 auto 28px;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--gray-4);
+    opacity: 0.8;
 }

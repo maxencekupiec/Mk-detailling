@@ -5,25 +5,34 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Loader ---
+    // --- Loader (raccourci pour le Speed Index, sauté après la 1re visite) ---
     const loader = document.getElementById('loader');
-    document.body.style.overflow = 'hidden';
+    let alreadyVisited = false;
+    try { alreadyVisited = !!sessionStorage.getItem('mk_visited'); } catch (e) {}
 
-    function startLoader() {
-        // Le texte s'affiche (CSS animations), puis on lance la sortie
-        setTimeout(() => {
-            loader.classList.add('exit');
+    if (alreadyVisited) {
+        // Visite suivante : pas d'écran d'intro, contenu immédiat
+        loader.classList.add('hidden');
+        revealHero();
+    } else {
+        document.body.style.overflow = 'hidden';
+        try { sessionStorage.setItem('mk_visited', '1'); } catch (e) {}
+
+        function startLoader() {
             setTimeout(() => {
-                loader.classList.add('hidden');
-                document.body.style.overflow = '';
-                revealHero();
-            }, 1100);
-        }, 2200);
-    }
+                loader.classList.add('exit');
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    revealHero();
+                }, 800);
+            }, 1400);
+        }
 
-    window.addEventListener('load', startLoader);
-    if (document.readyState === 'complete') {
-        startLoader();
+        window.addEventListener('load', startLoader);
+        if (document.readyState === 'complete') {
+            startLoader();
+        }
     }
 
     // --- Hero staggered reveal ---
