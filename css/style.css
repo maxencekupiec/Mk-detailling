@@ -4514,3 +4514,70 @@ section, footer, .marquee {
 
     .config-option { padding: 20px 12px; }
 }
+
+/* ============================
+   CONFIGURATEUR : ÉTAT + TIP PHOTOS
+   ============================ */
+.config-opt-emoji {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.config-opt-desc {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--gray-4);
+    letter-spacing: 0.2px;
+    transition: color 0.3s;
+}
+
+.config-option:hover .config-opt-desc {
+    color: var(--gray-5);
+}
+
+/* Tip photos : fun et concret */
+.config-photo-tip {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 440px;
+    margin: 0 auto 24px;
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    background: rgba(0,200,255,0.05);
+    border: 1px solid rgba(0,200,255,0.15);
+    text-align: left;
+}
+
+.tip-emoji {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    animation: tipShake 3s ease-in-out infinite;
+}
+
+@keyframes tipShake {
+    0%, 88%, 100% { transform: rotate(0deg); }
+    91% { transform: rotate(-12deg); }
+    94% { transform: rotate(10deg); }
+    97% { transform: rotate(-6deg); }
+}
+
+.config-photo-tip p {
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--gray-5);
+}
+
+.config-photo-tip strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .config-photo-tip {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}

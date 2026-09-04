@@ -563,19 +563,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const progressBar = document.getElementById('configProgress');
         const backBtn = document.getElementById('configBack');
         const waLink = document.getElementById('configWhatsapp');
-        const state = { vehicule: null, prestation: null, vehiculeLabel: '', prestationLabel: '' };
+        const state = { vehicule: null, etat: null, prestation: null, vehiculeLabel: '', etatLabel: '', prestationLabel: '' };
         let currentStep = 1;
 
         function showStep(n) {
             currentStep = n;
             steps.forEach(s => s.classList.toggle('config-step-active', parseInt(s.dataset.step) === n));
-            progressBar.style.width = (n / 3 * 100) + '%';
+            progressBar.style.width = (n / 4 * 100) + '%';
             backBtn.hidden = (n === 1);
 
-            if (n === 3) {
+            if (n === 4) {
                 document.getElementById('recapVehicule').textContent = state.vehiculeLabel;
+                document.getElementById('recapEtat').textContent = state.etatLabel;
                 document.getElementById('recapPrestation').textContent = state.prestationLabel;
-                const msg = `Bonjour Maxence ! J'ai ${state.vehicule} et je souhaite une prestation ${state.prestation}. Quelles sont vos disponibilités pour un rendez-vous ?`;
+                const msg = `Bonjour Maxence ! J'ai ${state.vehicule}, ${state.etat}, et je souhaite une prestation ${state.prestation}. Quelles sont vos disponibilités pour un rendez-vous ? Je peux vous envoyer des photos du véhicule.`;
                 waLink.href = 'https://wa.me/33781861695?text=' + encodeURIComponent(msg);
             }
         }
