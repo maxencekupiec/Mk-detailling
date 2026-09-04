@@ -4295,3 +4295,222 @@ section, footer, .marquee {
 @media (max-width: 768px) {
     .maxence-chip { font-size: 0.72rem; }
 }
+
+/* ============================
+   CONFIGURATEUR DEVIS
+   ============================ */
+.configurator {
+    padding: 56px 0;
+}
+
+.config-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Barre de progression */
+.config-progress {
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 3px;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+.config-progress-bar {
+    height: 100%;
+    width: 33%;
+    background: var(--gradient);
+    border-radius: 3px;
+    transition: width 0.5s var(--ease);
+    box-shadow: 0 0 10px var(--orange-glow);
+}
+
+/* Étapes */
+.config-step {
+    display: none;
+}
+
+.config-step-active {
+    display: block;
+    animation: configStepIn 0.45s var(--ease);
+}
+
+@keyframes configStepIn {
+    from { opacity: 0; transform: translateX(24px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.config-count {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-4);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.config-question {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* Options */
+.config-options {
+    display: grid;
+    gap: 14px;
+}
+
+.config-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.config-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+.config-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 26px 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--glass-border);
+    color: var(--gray-5);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
+}
+
+.config-option svg {
+    color: var(--gray-4);
+    transition: color 0.3s;
+}
+
+.config-option:hover {
+    color: var(--white);
+    border-color: rgba(255,102,0,0.4);
+    background: rgba(255,102,0,0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,102,0,0.08);
+}
+
+.config-option:hover svg {
+    color: var(--orange);
+}
+
+.config-option:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.config-option-featured {
+    border-color: rgba(255,102,0,0.25);
+    background: linear-gradient(180deg, rgba(255,102,0,0.06), rgba(255,255,255,0.02));
+}
+
+.config-opt-title {
+    font-size: 1rem;
+}
+
+.config-opt-price {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--cyan);
+    font-variant-numeric: tabular-nums;
+}
+
+.config-option-featured .config-opt-price {
+    color: var(--orange);
+}
+
+/* Récap */
+.config-recap {
+    max-width: 380px;
+    margin: 0 auto 28px;
+    border: 1px dashed rgba(255,255,255,0.14);
+    border-radius: var(--radius-sm);
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.config-recap-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.recap-label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-4);
+}
+
+.recap-value {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.config-step[data-step="3"] {
+    text-align: center;
+}
+
+.config-cta {
+    margin: 0 auto;
+}
+
+.config-note {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--gray-4);
+}
+
+/* Bouton retour */
+.config-back {
+    position: absolute;
+    top: 22px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: var(--gray-4);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 4px 8px;
+}
+
+.config-back:hover {
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .config-card {
+        padding: 32px 20px 24px;
+    }
+
+    .config-cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .config-cols-3 { grid-template-columns: 1fr; }
+
+    .config-option { padding: 20px 12px; }
+}

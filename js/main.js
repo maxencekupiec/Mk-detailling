@@ -556,6 +556,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
+    // --- Configurateur devis (2 questions -> RDV WhatsApp) ---
+    const configCard = document.querySelector('.config-card');
+    if (configCard) {
+        const steps = configCard.querySelectorAll('.config-step');
+        const progressBar = document.getElementById('configProgress');
+        const backBtn = document.getElementById('configBack');
+        const waLink = document.getElementById('configWhatsapp');
+        const state = { vehicule: null, prestation: null, vehiculeLabel: '', prestationLabel: '' };
+        let currentStep = 1;
+
+        function showStep(n) {
+            currentStep = n;
+            steps.forEach(s => s.classList.toggle('config-step-active', parseInt(s.dataset.step) === n));
+            progressBar.style.width = (n / 3 * 100) + '%';
+            backBtn.hidden = (n === 1);
+
+            if (n === 3) {
+                document.getElementById('recapVehicule').textContent = state.vehiculeLabel;
+                document.getElementById('recapPrestation').textContent = state.prestationLabel;
+                const msg = `Bonjour Maxence ! J'ai ${state.vehicule} et je souhaite une prestation ${state.prestation}. Quelles sont vos disponibilités pour un rendez-vous ?`;
+                waLink.href = 'https://wa.me/33781861695?text=' + encodeURIComponent(msg);
+            }
+        }
+
+        configCard.querySelectorAll('.config-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const field = btn.dataset.field;
+                state[field] = btn.dataset.value;
+                state[field + 'Label'] = btn.dataset.label;
+                showStep(currentStep + 1);
+            });
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (currentStep > 1) showStep(currentStep - 1);
+        });
+
+        showStep(1);
+    }
+
     // --- FAQ accordion ---
     document.querySelectorAll('.faq-question').forEach(btn => {
         btn.addEventListener('click', () => {
