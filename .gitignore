@@ -2,3 +2,4 @@
 *.mov
 # Système
 .DS_Store
+*.bak

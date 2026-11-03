@@ -18,21 +18,59 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
         try { sessionStorage.setItem('mk_visited', '1'); } catch (e) {}
 
+        // Position de l'étoile dans le logo (fraction du logo affiché)
+        const STAR_FX = 0.645, STAR_FY = 0.52;
+        const loaderWrap = document.getElementById('loaderWrap');
+
+        function placeStar() {
+            const r = loaderWrap.getBoundingClientRect();
+            const x = r.left + STAR_FX * r.width;
+            const y = r.top + STAR_FY * r.height;
+            loader.style.setProperty('--star-x', (x / window.innerWidth * 100).toFixed(1) + '%');
+            loader.style.setProperty('--star-y', (y / window.innerHeight * 100).toFixed(1) + '%');
+        }
+        placeStar();
+        window.addEventListener('resize', placeStar);
+
+        requestAnimationFrame(() => loader.classList.add('ready'));
+
+        let loaderDone = false;
+        function finishLoader() {
+            if (loaderDone) return;
+            loaderDone = true;
+            loader.classList.add('hidden');
+            document.body.style.overflow = '';
+            revealHero();
+        }
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         function startLoader() {
             setTimeout(() => {
-                loader.classList.add('exit');
+                if (reduceMotion) {
+                    loader.classList.add('exit');
+                    setTimeout(finishLoader, 500);
+                    return;
+                }
+                // Zoom dans l'étoile
+                placeStar();
+                loader.classList.add('zoom');
+                loaderWrap.style.transform = 'scale(24)';
+                setTimeout(() => loader.classList.add('flash'), 400);
                 setTimeout(() => {
-                    loader.classList.add('hidden');
-                    document.body.style.overflow = '';
-                    revealHero();
-                }, 800);
-            }, 1400);
+                    loader.classList.add('exit');
+                    loader.classList.remove('flash');
+                }, 880);
+                setTimeout(finishLoader, 1350);
+            }, 1550);
         }
 
         window.addEventListener('load', startLoader);
         if (document.readyState === 'complete') {
             startLoader();
         }
+        // Filet de sécurité : jamais plus de 6s d'attente
+        setTimeout(finishLoader, 6000);
     }
 
     // --- Hero staggered reveal ---
@@ -252,6 +290,44 @@ document.addEventListener('DOMContentLoaded', () => {
             p.style.opacity = (0.05 + Math.random() * 0.15);
             particlesContainer.appendChild(p);
         }
+        // Paillettes fixes qui scintillent (effet metal paillete)
+        const sparkCount = isMobile ? 26 : 70;
+        for (let i = 0; i < sparkCount; i++) {
+            const s = document.createElement('div');
+            s.classList.add('particle', 'spark');
+            if (Math.random() < 0.14) s.classList.add('blue');
+            s.style.left = Math.random() * 100 + '%';
+            s.style.top = Math.random() * 100 + '%';
+            s.style.animationDuration = (2 + Math.random() * 4).toFixed(2) + 's';
+            s.style.animationDelay = (Math.random() * 5).toFixed(2) + 's';
+            const sz = (Math.random() < 0.85 ? 1 + Math.random() : 1.8 + Math.random());
+            s.style.width = sz + 'px';
+            s.style.height = sz + 'px';
+            particlesContainer.appendChild(s);
+        }
+    }
+
+    // --- Chiffres cles : compteur a l'apparition ---
+    const specNums = document.querySelectorAll('.spec-num');
+    if (specNums.length) {
+        const specObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                specObserver.unobserve(el);
+                const target = parseInt(el.dataset.count, 10);
+                const dur = 1200;
+                const t0 = performance.now();
+                function tick(t) {
+                    const prog = Math.min((t - t0) / dur, 1);
+                    const eased = 1 - Math.pow(1 - prog, 3);
+                    el.textContent = Math.round(target * eased);
+                    if (prog < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            });
+        }, { threshold: 0.5 });
+        specNums.forEach(el => specObserver.observe(el));
     }
 
     // --- Parallax hero gradient ---
