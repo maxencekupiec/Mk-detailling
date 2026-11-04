@@ -6,8 +6,8 @@
 <title>MK Detailling | Nettoyage auto professionnel &agrave; domicile &agrave; Nancy, Metz &amp; Luxembourg</title>
     <meta name="description" content="Nettoyage auto professionnel &agrave; domicile &agrave; Nancy. Prestations int&eacute;rieur, ext&eacute;rieur, c&eacute;ramique. Intervention Nancy, Metz, Luxembourg. Devis gratuit sur WhatsApp.">
     <meta name="keywords" content="nettoyage auto Nancy, nettoyage auto professionnel Nancy, lavage voiture domicile Nancy, nettoyage automobile Metz, nettoyage auto Luxembourg, nettoyage interieur voiture Nancy, ceramique auto Nancy, polish voiture Nancy, renovation plastique auto, lavage jantes Nancy">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico?v=3" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
     <link rel="canonical" href="https://mkdetailling.fr/">
     <meta property="og:title" content="MK Detailling | Nettoyage automobile premium &agrave; domicile">
     <meta property="og:description" content="Nettoyage auto professionnel &agrave; domicile. Nancy, Metz, Luxembourg. Devis gratuit.">
@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/loader-logo.webp">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -70,7 +70,7 @@ a{color:inherit;text-decoration:none}
     opacity: 0;
     transform: scale(0.94);
     transform-origin: 64.5% 52%;
-    transition: opacity 0.8s var(--ease), transform 1.6s var(--ease);
+    transition: opacity 0.45s var(--ease), transform 0.9s var(--ease);
     will-change: transform, opacity;
 }
 
@@ -122,7 +122,7 @@ a{color:inherit;text-decoration:none}
     height: 100%;
     width: 0;
     background: #fff;
-    transition: width 1.4s var(--ease-out);
+    transition: width 0.7s var(--ease-out);
 }
 
 .loader.ready .loader-bar span {
@@ -130,7 +130,7 @@ a{color:inherit;text-decoration:none}
 }
 
 .loader.zoom .loader-logo-wrap {
-    transition: transform 1s cubic-bezier(0.85, 0, 0.25, 1), opacity 0.38s ease 0.42s, filter 0.9s ease;
+    transition: transform 0.75s cubic-bezier(0.85, 0, 0.25, 1), opacity 0.3s ease 0.3s, filter 0.65s ease;
     opacity: 0;
     filter: blur(4px);
 }
@@ -278,7 +278,7 @@ section{padding:64px 0;position:relative}
 .t-card svg{margin-bottom:10px}
 .t-card b{display:block;font-size:0.92rem;margin-bottom:4px}
 .t-card small{color:var(--muted);font-size:0.8rem;line-height:1.45;display:block}
-@media(max-width:900px){.trust-cards{grid-template-columns:repeat(2,1fr)}.vz-frame{width:92vw;height:51.75vw}}
+@media(max-width:900px){.vz-frame{width:92vw;height:51.75vw}}
 
 /* === experience 3D scroll === */
 .czoom{height:300vh;position:relative;padding:0;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 8%,var(--bg) 100%)}
@@ -296,12 +296,18 @@ section{padding:64px 0;position:relative}
 .cz-cta{margin-top:26px;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s;pointer-events:none}
 .cz-cta.on{opacity:1;transform:none;pointer-events:auto}
 @media(max-width:900px){
-  .cz-grid{align-items:flex-end}
-  .cz-left{width:100%;margin:0;padding:18px 20px 84px;border-radius:0;background:linear-gradient(180deg,rgba(16,18,22,0) 0%,rgba(16,18,22,0.88) 45%)}
-  .cz-left h2{font-size:1.45rem}
-  .cz-step{padding:8px 12px}
-  .cz-step p{display:none}
-  .cz-steps{margin-top:16px}
+  /* meme rendu que desktop : texte a gauche, voiture a droite */
+  .cz-grid{align-items:center}
+  .cz-left{width:58%;margin-left:0;padding:12px 18px 12px 14px;border-radius:0 16px 16px 0;background:linear-gradient(90deg,rgba(16,18,22,0.86) 60%,rgba(16,18,22,0))}
+  .cz-left .kicker{font-size:0.58rem;letter-spacing:2px;margin-bottom:8px}
+  .cz-left h2{font-size:1.1rem}
+  .cz-steps{margin-top:12px;gap:5px}
+  .cz-step{padding:7px 9px;gap:9px}
+  .cz-step i{font-size:0.56rem;margin-top:3px}
+  .cz-step b{font-size:0.76rem}
+  .cz-step p{display:block;font-size:0.6rem;line-height:1.35;margin-top:2px}
+  .cz-cta{margin-top:14px}
+  .cz-cta .btn{padding:9px 16px;font-size:0.68rem}
 }
 .cz-hint{position:absolute;bottom:4.5vh;left:0;right:0;text-align:center;z-index:3;font-size:0.76rem;letter-spacing:2.5px;text-transform:uppercase;color:#9aa0a8;transition:opacity .4s}
 .cz-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;color:#5f656e;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase}
@@ -309,8 +315,8 @@ section{padding:64px 0;position:relative}
 /* === atelier en action (videos) === */
 .action{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);overflow:hidden;position:relative}
 .action-social{display:flex;gap:10px}
-.action-wall{margin:34px calc(-1 * max(24px, (100vw - 1140px) / 2)) 0;padding:0 24px 26px}
-.action-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1500px;margin:0 auto}
+.action-wall{margin:34px auto 0;padding:0 0 26px}
+.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto}
 .action-grid .a-video:nth-child(even){margin-top:26px}
 .a-video{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#0c0e12;transition:transform .4s var(--ease),box-shadow .4s}
 .a-video:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(26,12,240,0.25)}
@@ -319,17 +325,18 @@ section{padding:64px 0;position:relative}
 .a-sound{position:absolute;right:10px;top:10px;z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);background:rgba(10,11,14,0.55);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
 .a-sound.on{background:var(--blue-deep);border-color:var(--blue-deep)}
 @media(max-width:900px){
-.action-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.action-grid .a-video{flex:0 0 46vw;scroll-snap-align:center}
-.action-grid .a-video:nth-child(even){margin-top:18px}
-.a-tag{font-size:0.62rem;padding:4px 8px}}
+/* mur en grille verticale : 2 par ligne, on scrolle vers le bas */
+.action-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.action-grid .a-video{border-radius:12px}
+.action-grid .a-video:nth-child(even){margin-top:16px}
+.a-tag{font-size:0.56rem;padding:3px 8px;left:8px;bottom:8px}
+.a-sound{width:28px;height:28px}}
 
 /* sticky CTA mobile */
 .sticky-cta{display:none}
 @media(max-width:700px){
-  .sticky-cta{display:block;position:fixed;left:14px;right:14px;bottom:14px;z-index:95}
-  .sticky-cta a{width:100%;justify-content:center}
-  .waf{bottom:80px}
+  .sticky-cta{display:block;position:fixed;left:14px;right:14px;bottom:12px;z-index:95}
+  .sticky-cta a{width:100%;justify-content:center;padding:13px 24px}
 }
 
 /* ===== LOGOS ===== */
@@ -354,20 +361,22 @@ section{padding:64px 0;position:relative}
 
 /* ===== PRESTATIONS ===== */
 .prestas{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg2) 72%,var(--bg) 100%)}
-.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;align-items:stretch}
-.p-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px 28px;display:flex;flex-direction:column;position:relative;transition:transform .4s var(--ease),border-color .4s}
-.p-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.18)}
-.p-card.feat{border:1.5px solid var(--blue);background:linear-gradient(180deg,rgba(43,29,255,0.08),var(--card) 55%)}
-.p-feat-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue-deep);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:99px;white-space:nowrap}
-.p-star{width:20px;height:20px;margin-bottom:16px}
-.p-card h3{font-size:1.25rem;font-weight:700}
-.p-card .p-for{font-size:0.86rem;color:var(--muted);margin:4px 0 18px}
-.p-card ul{list-style:none;display:grid;gap:9px;margin-bottom:24px;font-size:0.92rem;color:#c3c7cd}
+/* 3 cartes horizontales pleine largeur, empilees */
+.p-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+.p-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 32px;display:grid;grid-template-columns:minmax(210px,250px) 1fr auto;gap:34px;align-items:center;position:relative;transition:transform .4s var(--ease),border-color .4s}
+.p-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.18)}
+.p-card.feat{border:1.5px solid var(--blue);background:linear-gradient(90deg,rgba(43,29,255,0.1),var(--card) 60%)}
+.p-feat-badge{position:absolute;top:-13px;left:32px;background:var(--blue-deep);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:99px;white-space:nowrap}
+.p-num{display:inline-flex;align-items:baseline;gap:1px;font-weight:700;font-size:0.82rem;color:var(--blue-light);background:rgba(43,29,255,0.14);padding:5px 11px;border-radius:9px;margin-bottom:12px}
+.p-num em{font-style:normal;font-size:0.66rem;color:var(--muted)}
+.p-card h3{font-size:1.3rem;font-weight:700}
+.p-card .p-for{font-size:0.86rem;color:var(--muted);margin-top:4px}
+.p-card ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 20px;font-size:0.92rem;color:#c3c7cd}
 .p-card li::before{content:'✓';color:var(--blue-light);font-weight:700;margin-right:9px}
-.p-price{margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
-.p-price b{font-size:1.5rem;font-weight:700}
-.p-price span{font-size:0.8rem;color:var(--muted);display:block}
-.p-card .btn{margin-top:18px;justify-content:center}
+.p-buy{display:grid;gap:12px;justify-items:stretch;min-width:180px;text-align:left}
+.p-price b{font-size:1.45rem;font-weight:700}
+.p-price span{font-size:0.78rem;color:var(--muted);display:block}
+.p-card .btn{justify-content:center}
 .p-note{text-align:center;color:var(--faint);font-size:0.85rem;margin-top:20px}
 
 /* ===== PROCESS ===== */
@@ -446,15 +455,54 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 .wa-bubble::before{content:'Maxence';display:block;font-size:0.68rem;font-weight:700;color:#1faa55;letter-spacing:0.5px;margin-bottom:2px}
 .wa-bubble::after{content:'';position:absolute;right:-7px;bottom:8px;width:0;height:0;border-style:solid;border-width:7px 0 7px 9px;border-color:transparent transparent transparent #fff}
 .wa-bubble.show{opacity:1;transform:none;pointer-events:auto}
-@media(max-width:700px){.wa-bubble{font-size:0.8rem;padding:10px 14px}}
+@media(max-width:700px){
+  /* au-dessus du CTA sticky, jamais cache par lui */
+  .waf{bottom:86px;right:16px}
+  .wa-round{width:52px;height:52px}
+  .waf .wa-round img{width:46px;height:46px}
+  .wa-bubble{font-size:0.8rem;padding:10px 14px}
+}
 
 @media(max-width:900px){
   .nav-links,.nav-tel{display:none}
-  .specs{grid-template-columns:repeat(2,1fr)}
-  .p-grid,.steps{grid-template-columns:1fr}
-  .avis-grid{columns:1}
-  .max-grid{grid-template-columns:1fr;gap:30px}
   section{padding:48px 0}
+  /* prestations : cartes horizontales pleine largeur, empilees */
+  .p-grid{gap:12px}
+  .p-card{grid-template-columns:1fr;gap:12px;padding:18px 16px;border-radius:16px}
+  .p-num{font-size:0.72rem;padding:4px 9px;margin-bottom:8px}
+  .p-card h3{font-size:1.05rem}
+  .p-card .p-for{font-size:0.76rem;margin-top:2px}
+  .p-card ul{grid-template-columns:1fr 1fr;gap:6px 12px;font-size:0.72rem}
+  .p-card li::before{margin-right:6px}
+  .p-buy{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+  .p-price b{font-size:1.1rem}
+  .p-price span{font-size:0.62rem}
+  .p-card .btn{padding:10px 16px;font-size:0.72rem}
+  .p-feat-badge{font-size:0.56rem;padding:4px 11px;top:-10px;left:16px;letter-spacing:1px}
+  /* comment ca marche : 3 etapes en ligne */
+  .steps{grid-template-columns:repeat(3,1fr);gap:8px}
+  .step{padding:14px 10px;border-radius:14px}
+  .step i{width:26px;height:26px;border-radius:8px;margin-bottom:10px;font-size:0.7rem}
+  .step .s-meta{font-size:0.5rem;padding:3px 7px;margin-bottom:8px;letter-spacing:0.5px;gap:4px}
+  .step h3{font-size:0.74rem;margin-bottom:5px}
+  .step p{font-size:0.62rem}
+  /* confiance : 4 cartes en ligne */
+  .trust-cards{grid-template-columns:repeat(4,1fr);gap:7px}
+  .t-card{padding:12px 6px;border-radius:12px}
+  .t-card svg{width:13px;height:13px;margin-bottom:6px}
+  .t-card b{font-size:0.6rem;margin-bottom:3px}
+  .t-card small{font-size:0.52rem;line-height:1.35}
+  /* avis : mosaique 2 colonnes */
+  .avis-grid{columns:2;column-gap:10px}
+  .a-card{padding:14px;margin-bottom:10px;border-radius:14px}
+  .a-card p{font-size:0.72rem}
+  .a-card .stars{font-size:0.66rem;margin-bottom:6px}
+  .a-who span.av2{width:26px;height:26px;font-size:0.62rem}
+  .a-who b{font-size:0.7rem}
+  .a-who small{font-size:0.58rem}
+  .a-badge{padding:8px 12px;font-size:0.7rem;gap:7px}
+  .a-badge b{font-size:0.76rem}
+  .max-grid{grid-template-columns:1fr;gap:30px}
 }
 </style>
 <script type="application/ld+json">
@@ -602,8 +650,7 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
       <h2>Entrez dans <span class="hgrad">l'univers MK</span>.</h2>
     </div>
     <div class="vz-frame" id="vzFrame">
-      <video id="vzVideo" muted loop playsinline autoplay preload="metadata"></video>
-      <script>document.getElementById('vzVideo').src = window.innerWidth < 900 ? 'assets/presentation-720.mp4' : 'assets/presentation.mp4';</script>
+      <video id="vzVideo" muted loop playsinline autoplay preload="none"></video>
       <button class="vz-sound" id="vzSound" aria-label="Activer le son"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg></button>
     </div>
     <div class="vz-hint" id="vzHint">Continuez de scroller</div>
@@ -679,44 +726,56 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
     <p class="sub" data-r>Nettoyage int&eacute;rieur, lavage ext&eacute;rieur ou remise &agrave; neuf compl&egrave;te&nbsp;: chaque prestation est r&eacute;alis&eacute;e &agrave; la main, chez vous, avec des produits professionnels. Le prix exact d&eacute;pend de votre v&eacute;hicule et de son &eacute;tat&nbsp;: il est confirm&eacute; avant l'intervention, et il ne bouge plus.</p>
     <div class="p-grid">
       <div class="p-card" data-r>
-        <svg class="p-star" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#7a6cff"/></svg>
-        <h3>Int&eacute;rieur</h3>
-        <p class="p-for">Pour un habitacle sain, comme au premier jour.</p>
+        <div class="p-head">
+          <span class="p-num">01<em>/03</em></span>
+          <h3>Int&eacute;rieur</h3>
+          <p class="p-for">Pour un habitacle sain, comme au premier jour.</p>
+        </div>
         <ul>
           <li>Aspiration compl&egrave;te</li>
           <li>D&eacute;contamination vapeur</li>
           <li>Plastiques &amp; cuirs trait&eacute;s</li>
           <li>Vitres int&eacute;rieures</li>
         </ul>
-        <div class="p-price"><b>70 &ndash; 110 &euro;</b><span>selon v&eacute;hicule et &eacute;tat</span></div>
-        <a href="#devis" class="btn btn-g btn-sm">Estimer mon devis</a>
+        <div class="p-buy">
+          <div class="p-price"><b>70 &ndash; 110 &euro;</b><span>selon v&eacute;hicule et &eacute;tat</span></div>
+          <a href="#devis" class="btn btn-g btn-sm">Estimer mon devis</a>
+        </div>
       </div>
       <div class="p-card feat" data-r>
         <span class="p-feat-badge">La plus demand&eacute;e</span>
-        <svg class="p-star" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
-        <h3>Compl&egrave;te signature</h3>
-        <p class="p-for">Int&eacute;rieur + ext&eacute;rieur. La remise &agrave; neuf totale.</p>
+        <div class="p-head">
+          <span class="p-num">02<em>/03</em></span>
+          <h3>Compl&egrave;te signature</h3>
+          <p class="p-for">Int&eacute;rieur + ext&eacute;rieur. La remise &agrave; neuf totale.</p>
+        </div>
         <ul>
           <li>Tout l'int&eacute;rieur inclus</li>
           <li>Tout l'ext&eacute;rieur inclus</li>
           <li>Cire c&eacute;ramique 3 mois</li>
           <li>C&eacute;ramique vitres 1 an</li>
         </ul>
-        <div class="p-price"><b>150 &ndash; 250 &euro;</b><span>selon v&eacute;hicule et &eacute;tat</span></div>
-        <a href="#devis" class="btn btn-p btn-sm">Estimer mon devis</a>
+        <div class="p-buy">
+          <div class="p-price"><b>150 &ndash; 250 &euro;</b><span>selon v&eacute;hicule et &eacute;tat</span></div>
+          <a href="#devis" class="btn btn-p btn-sm">Estimer mon devis</a>
+        </div>
       </div>
       <div class="p-card" data-r>
-        <svg class="p-star" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#7a6cff"/></svg>
-        <h3>Ext&eacute;rieur</h3>
-        <p class="p-for">Pour une carrosserie brillante et prot&eacute;g&eacute;e.</p>
+        <div class="p-head">
+          <span class="p-num">03<em>/03</em></span>
+          <h3>Ext&eacute;rieur</h3>
+          <p class="p-for">Pour une carrosserie brillante et prot&eacute;g&eacute;e.</p>
+        </div>
         <ul>
           <li>Pr&eacute;-lavage &amp; lavage mitaine</li>
           <li>Jantes d&eacute;contamin&eacute;es</li>
           <li>Cire c&eacute;ramique 3 mois</li>
           <li>Finition des plastiques</li>
         </ul>
-        <div class="p-price"><b>70 &ndash; 110 &euro;</b><span>selon v&eacute;hicule et &eacute;tat</span></div>
-        <a href="#devis" class="btn btn-g btn-sm">Estimer mon devis</a>
+        <div class="p-buy">
+          <div class="p-price"><b>70 &ndash; 110 &euro;</b><span>selon v&eacute;hicule et &eacute;tat</span></div>
+          <a href="#devis" class="btn btn-g btn-sm">Estimer mon devis</a>
+        </div>
       </div>
     </div>
     <p class="p-note">Poils d'animaux, moisissures, v&eacute;hicule tr&egrave;s sale ? On adore. Envoyez des photos avec votre demande, le devis sera juste.</p>
@@ -763,8 +822,8 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
   <div class="container" style="position:relative">
     <div style="display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <div>
-        <span class="kicker" data-r>L'atelier en action</span>
-        <h2 data-r>Le geste, en <span class="hgrad">vrai</span>.</h2>
+        <span class="kicker" data-r>Nos interventions en vid&eacute;o</span>
+        <h2 data-r>MK en <span class="hgrad">action</span>.</h2>
         <p class="sub" data-r>Pas de mise en sc&egrave;ne&nbsp;: des interventions r&eacute;elles, film&eacute;es chez nos clients.</p>
       </div>
       <div class="action-social" data-r>
@@ -810,7 +869,6 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 
 <section class="final" id="devis">
   <div class="container">
-    <span class="kicker" data-r>Devis gratuit &middot; r&eacute;ponse dans la journ&eacute;e</span>
     <h2 data-r>Votre devis en <span class="hgrad">30 secondes</span>.</h2>
     <p class="sub" data-r style="margin:16px auto 0;text-align:center">D&eacute;crivez votre v&eacute;hicule, joignez 2-3 photos, et Maxence vous r&eacute;pond en personne avec un prix pr&eacute;cis. Pas de devis &agrave; la louche.</p>
     <div class="final-ctas">
@@ -879,20 +937,25 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
   let done = false;
   function finish(){ if(done) return; done = true; loader.classList.add('hidden'); document.body.style.overflow=''; }
   const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let launched = false;
   function start(){
+    if (launched) return; launched = true;
     setTimeout(() => {
-      if (rm) { loader.classList.add('exit'); setTimeout(finish, 500); return; }
+      if (rm) { loader.classList.add('exit'); setTimeout(finish, 400); return; }
       placeStar();
       loader.classList.add('zoom');
       wrap.style.transform = 'scale(24)';
-      setTimeout(() => loader.classList.add('flash'), 400);
-      setTimeout(() => { loader.classList.add('exit'); loader.classList.remove('flash'); }, 880);
-      setTimeout(finish, 1350);
-    }, 1550);
+      setTimeout(() => loader.classList.add('flash'), 300);
+      setTimeout(() => { loader.classList.add('exit'); loader.classList.remove('flash'); }, 620);
+      setTimeout(finish, 1000);
+    }, 700);
   }
-  addEventListener('load', start);
-  if (document.readyState === 'complete') start();
-  setTimeout(finish, 6000);
+  // demarre des que le logo est affichable, sans attendre les videos
+  const logoImg = wrap.querySelector('img');
+  if (logoImg.complete) start();
+  else { logoImg.addEventListener('load', start); logoImg.addEventListener('error', start); }
+  setTimeout(start, 1200);
+  setTimeout(finish, 3500);
 })();
 
 // paillettes
@@ -965,22 +1028,23 @@ if (aVids.length) {
   aVids.forEach(w => vo.observe(w));
 }
 
-// video presentation : bouton son
+// video presentation : chargement differe (ne concurrence pas le hero) + bouton son
 const vzVideo = document.getElementById('vzVideo'), vzSound = document.getElementById('vzSound');
+function vzLoad() {
+  if (vzVideo.dataset.loaded) return;
+  vzVideo.dataset.loaded = '1';
+  vzVideo.src = window.innerWidth < 900 ? 'assets/presentation-720.mp4' : 'assets/presentation.mp4';
+  vzVideo.play().catch(()=>{});
+}
+addEventListener('load', () => setTimeout(vzLoad, 500));
+new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) vzLoad(); }, { rootMargin: '200px' }).observe(vz);
 if (vzVideo && vzSound) {
   vzSound.addEventListener('click', () => {
+    vzLoad();
     vzVideo.muted = !vzVideo.muted;
     vzSound.classList.toggle('on', !vzVideo.muted);
     if (!vzVideo.muted) vzVideo.play().catch(()=>{});
   });
-}
-
-// hero : la 1re video (RS3) demarre a 5s pour sauter le texte incruste
-const heroV1 = document.querySelector('.hero-vids video');
-if (heroV1) {
-  const START = 5;
-  heroV1.addEventListener('loadedmetadata', () => { heroV1.currentTime = START; });
-  heroV1.addEventListener('timeupdate', () => { if (heroV1.currentTime < START - 0.25) heroV1.currentTime = START; });
 }
 
 // bulle whatsapp : CTA periodique
@@ -1107,8 +1171,15 @@ function init3D() {
     const w = innerWidth, h = innerHeight;
     renderer.setSize(w, h);
     camera.aspect = w / h;
-    if (w >= 900) camera.setViewOffset(w, h, -w * 0.17, 0, w, h);
-    else camera.setViewOffset(w, h, 0, h * 0.14, w, h);
+    if (w >= 900) {
+      camera.position.set(5.4, 1.7, 5.4);
+      camera.setViewOffset(w, h, -w * 0.17, 0, w, h);
+    } else {
+      // mobile : meme composition que desktop, voiture dans la moitie droite
+      camera.position.set(6.6, 1.9, 6.6);
+      camera.setViewOffset(w, h, -w * 0.52, 0, w, h);
+    }
+    camera.lookAt(0, 0.5, 0);
     camera.updateProjectionMatrix();
   }
   applyView();
