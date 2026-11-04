@@ -278,36 +278,35 @@ section{padding:64px 0;position:relative}
 .t-card svg{margin-bottom:10px}
 .t-card b{display:block;font-size:0.92rem;margin-bottom:4px}
 .t-card small{color:var(--muted);font-size:0.8rem;line-height:1.45;display:block}
-@media(max-width:900px){.vz-frame{width:92vw;height:51.75vw}}
 
 /* === experience 3D scroll === */
 .czoom{height:300vh;position:relative;padding:0;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 8%,var(--bg) 100%)}
 .cz-sticky{position:sticky;top:0;height:100vh;overflow:hidden}
 #carCanvas{position:absolute;inset:0;width:100%;height:100%}
 .cz-grid{position:absolute;inset:0;z-index:3;display:flex;align-items:center;pointer-events:none}
-.cz-left{width:min(470px,46%);margin-left:max(24px,calc((100vw - 1140px)/2));background:linear-gradient(90deg,rgba(16,18,22,0.78) 55%,rgba(16,18,22,0));padding:20px 56px 20px 0;border-radius:0 24px 24px 0}
+.cz-left{width:min(470px,46%);margin-left:max(24px,calc((100vw - 1140px)/2));padding:0}
 .cz-left h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-top:6px;line-height:1.12}
-.cz-steps{margin-top:30px;display:grid;gap:8px}
-.cz-step{display:flex;gap:14px;padding:14px 16px;border-left:2px solid transparent;border-radius:0 12px 12px 0;opacity:0.32;transition:opacity .4s,border-color .4s,background .4s}
-.cz-step.on{opacity:1;border-color:#2b1dff;background:rgba(43,29,255,0.08)}
+.cz-steps{margin-top:30px;display:grid;gap:10px}
+.cz-step{display:flex;gap:14px;padding:15px 18px;border:1px solid rgba(255,255,255,0.07);border-radius:14px;background:rgba(13,15,19,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0.38;transition:opacity .4s,border-color .4s,background .4s}
+.cz-step.on{opacity:1;border-color:rgba(74,61,255,0.7);background:rgba(43,29,255,0.13)}
 .cz-step i{font-style:normal;font-weight:700;color:#7a6cff;font-size:0.78rem;letter-spacing:1px;margin-top:4px}
 .cz-step b{font-size:1.02rem}
 .cz-step p{font-size:0.86rem;color:var(--muted);margin-top:3px}
-.cz-cta{margin-top:26px;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s;pointer-events:none}
+.cz-cta{position:absolute;left:0;right:0;bottom:7vh;display:flex;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s;pointer-events:none}
 .cz-cta.on{opacity:1;transform:none;pointer-events:auto}
 @media(max-width:900px){
   /* meme rendu que desktop : texte a gauche, voiture a droite */
-  .cz-grid{align-items:flex-end;padding-bottom:9vh}
-  .cz-left{width:58%;margin-left:0;padding:12px 18px 12px 14px;border-radius:0 16px 16px 0;background:linear-gradient(90deg,rgba(16,18,22,0.86) 60%,rgba(16,18,22,0))}
+  .cz-grid{align-items:flex-start;padding-top:14vh}
+  .cz-left{width:64%;margin-left:0;padding:0 0 0 16px}
   .cz-left .kicker{font-size:0.58rem;letter-spacing:2px;margin-bottom:8px}
   .cz-left h2{font-size:1.1rem}
-  .cz-steps{margin-top:12px;gap:5px}
-  .cz-step{padding:7px 9px;gap:9px}
+  .cz-steps{margin-top:12px;gap:6px}
+  .cz-step{padding:9px 11px;gap:9px;border-radius:11px}
   .cz-step i{font-size:0.56rem;margin-top:3px}
   .cz-step b{font-size:0.76rem}
   .cz-step p{display:block;font-size:0.6rem;line-height:1.35;margin-top:2px}
-  .cz-cta{margin-top:14px}
-  .cz-cta .btn{padding:9px 16px;font-size:0.68rem}
+  .cz-cta{bottom:11vh}
+  .cz-cta .btn{padding:11px 20px;font-size:0.78rem}
 }
 .cz-hint{position:absolute;bottom:4.5vh;left:0;right:0;text-align:center;z-index:3;font-size:0.76rem;letter-spacing:2.5px;text-transform:uppercase;color:#9aa0a8;transition:opacity .4s}
 .cz-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;color:#5f656e;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase}
@@ -465,16 +464,23 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 
 @media(max-width:900px){
   .nav-links,.nav-tel{display:none}
-  section{padding:40px 0}
+  section{padding:32px 0}
   .sub{font-size:0.92rem;margin-top:10px}
   /* fond unifie : plus de bandes plus claires entre les sections */
   .prestas,.action,.max,.mq{background:var(--bg)}
   .czoom{background:var(--bg)}
   .max{border-top:none;border-bottom:none}
-  /* sections scroll : course raccourcie, moins de vide */
-  .vzoom{height:170vh}
-  .czoom{height:220vh}
-  .mq{padding:16px 0}
+  /* halos flous : taches visibles sur OLED */
+  .orb{display:none}
+  .hero-scroll{padding:16px 0 8px}
+  /* video presentation : section normale compacte, pas d'effet sticky */
+  .vzoom{height:auto;padding:32px 0 0}
+  .vz-sticky{position:static;height:auto;display:block;overflow:visible}
+  .vz-head{margin:0 20px 18px}
+  .vz-frame{width:100%;height:auto;aspect-ratio:16/9;border-radius:0;border-left:none;border-right:none;box-shadow:none;max-height:none}
+  .vz-hint{display:none}
+  .czoom{height:200vh}
+  .mq{padding:12px 0}
   .action-wall{margin:20px auto 0;padding-bottom:0}
   .avis-grid{margin-top:20px}
   .p-grid{margin-top:22px}
@@ -998,6 +1004,7 @@ ba.addEventListener('pointerdown', e => { auto = false; document.getElementById(
 const vz = document.querySelector('.vzoom'), vzFrame = document.getElementById('vzFrame'),
       vzHead = document.getElementById('vzHead'), vzHint = document.getElementById('vzHint');
 function vzUpdate() {
+  if (window.innerWidth < 900) { vzFrame.removeAttribute('style'); vzHead.removeAttribute('style'); vzHint.style.opacity = ''; return; }
   const r = vz.getBoundingClientRect();
   const total = vz.offsetHeight - window.innerHeight;
   const p = Math.max(0, Math.min(1, -r.top / total));
@@ -1189,7 +1196,7 @@ function init3D() {
     } else {
       // mobile : meme composition que desktop, voiture dans la moitie droite
       camera.position.set(6.6, 1.9, 6.6);
-      camera.setViewOffset(w, h, -w * 0.52, 0, w, h);
+      camera.setViewOffset(w, h, -w * 0.42, -h * 0.12, w, h);
     }
     camera.lookAt(0, 0.5, 0);
     camera.updateProjectionMatrix();
