@@ -296,17 +296,19 @@ section{padding:64px 0;position:relative}
 .cz-cta.on{opacity:1;transform:none;pointer-events:auto}
 @media(max-width:900px){
   /* meme rendu que desktop : texte a gauche, voiture a droite */
-  .cz-grid{align-items:flex-start;padding-top:14vh}
-  .cz-left{width:64%;margin-left:0;padding:0 0 0 16px}
-  .cz-left .kicker{font-size:0.58rem;letter-spacing:2px;margin-bottom:8px}
-  .cz-left h2{font-size:1.1rem}
-  .cz-steps{margin-top:12px;gap:6px}
-  .cz-step{padding:9px 11px;gap:9px;border-radius:11px}
-  .cz-step i{font-size:0.56rem;margin-top:3px}
-  .cz-step b{font-size:0.76rem}
-  .cz-step p{display:block;font-size:0.6rem;line-height:1.35;margin-top:2px}
-  .cz-cta{bottom:11vh}
+  .cz-sticky{height:88vh}
+  .cz-grid{align-items:flex-start;padding-top:11vh}
+  .cz-left{width:100%;margin-left:0;padding:0 16px}
+  .cz-left .kicker{font-size:0.68rem;letter-spacing:2.5px;margin-bottom:10px}
+  .cz-left h2{font-size:1.75rem}
+  .cz-steps{margin-top:18px;gap:8px}
+  .cz-step{padding:12px 14px;gap:11px;border-radius:12px}
+  .cz-step i{font-size:0.62rem;margin-top:3px}
+  .cz-step b{font-size:0.9rem}
+  .cz-step p{display:block;font-size:0.7rem;line-height:1.4;margin-top:2px}
+  .cz-cta{bottom:4vh}
   .cz-cta .btn{padding:11px 20px;font-size:0.78rem}
+  .cz-hint{bottom:3vh}
 }
 .cz-hint{position:absolute;bottom:4.5vh;left:0;right:0;text-align:center;z-index:3;font-size:0.76rem;letter-spacing:2.5px;text-transform:uppercase;color:#9aa0a8;transition:opacity .4s}
 .cz-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;color:#5f656e;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase}
@@ -479,7 +481,7 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
   .vz-head{margin:0 20px 18px}
   .vz-frame{width:100%;height:auto;aspect-ratio:16/9;border-radius:0;border-left:none;border-right:none;box-shadow:none;max-height:none}
   .vz-hint{display:none}
-  .czoom{height:200vh}
+  .czoom{height:185vh}
   .mq{padding:12px 0}
   .action-wall{margin:20px auto 0;padding-bottom:0}
   .avis-grid{margin-top:20px}
@@ -1187,16 +1189,16 @@ function init3D() {
   camera.position.set(5.4, 1.7, 5.4);
   camera.lookAt(0, 0.5, 0);
   function applyView() {
-    const w = innerWidth, h = innerHeight;
+    const w = canvas.clientWidth || innerWidth, h = canvas.clientHeight || innerHeight;
     renderer.setSize(w, h);
     camera.aspect = w / h;
-    if (w >= 900) {
+    if (innerWidth >= 900) {
       camera.position.set(5.4, 1.7, 5.4);
       camera.setViewOffset(w, h, -w * 0.17, 0, w, h);
     } else {
-      // mobile : meme composition que desktop, voiture dans la moitie droite
-      camera.position.set(6.6, 1.9, 6.6);
-      camera.setViewOffset(w, h, -w * 0.42, -h * 0.12, w, h);
+      // mobile : voiture centree derriere les trois etapes, legerement reculee
+      camera.position.set(7.4, 2.0, 7.4);
+      camera.setViewOffset(w, h, 0, -h * 0.06, w, h);
     }
     camera.lookAt(0, 0.5, 0);
     camera.updateProjectionMatrix();
