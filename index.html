@@ -298,14 +298,14 @@ section{padding:64px 0;position:relative}
   /* meme rendu que desktop : texte a gauche, voiture a droite */
   .cz-sticky{height:88vh}
   .cz-grid{align-items:flex-start;padding-top:11vh}
-  .cz-left{width:100%;margin-left:0;padding:0 16px}
-  .cz-left .kicker{font-size:0.68rem;letter-spacing:2.5px;margin-bottom:10px}
-  .cz-left h2{font-size:1.75rem}
-  .cz-steps{margin-top:18px;gap:8px}
-  .cz-step{padding:12px 14px;gap:11px;border-radius:12px}
-  .cz-step i{font-size:0.62rem;margin-top:3px}
-  .cz-step b{font-size:0.9rem}
-  .cz-step p{display:block;font-size:0.7rem;line-height:1.4;margin-top:2px}
+  .cz-left{width:62%;margin-left:0;padding:0 0 0 16px}
+  .cz-left .kicker{font-size:0.64rem;letter-spacing:2.5px;margin-bottom:9px}
+  .cz-left h2{font-size:1.35rem}
+  .cz-steps{margin-top:16px;gap:7px}
+  .cz-step{padding:10px 12px;gap:10px;border-radius:12px}
+  .cz-step i{font-size:0.58rem;margin-top:3px}
+  .cz-step b{font-size:0.8rem}
+  .cz-step p{display:block;font-size:0.64rem;line-height:1.4;margin-top:2px}
   .cz-cta{bottom:4vh}
   .cz-cta .btn{padding:11px 20px;font-size:0.78rem}
   .cz-hint{bottom:3vh}
@@ -1196,9 +1196,9 @@ function init3D() {
       camera.position.set(5.4, 1.7, 5.4);
       camera.setViewOffset(w, h, -w * 0.17, 0, w, h);
     } else {
-      // mobile : voiture centree derriere les trois etapes, legerement reculee
-      camera.position.set(7.4, 2.0, 7.4);
-      camera.setViewOffset(w, h, 0, -h * 0.06, w, h);
+      // mobile : comme desktop, texte a gauche et voiture dans la moitie droite
+      camera.position.set(7.8, 2.1, 7.8);
+      camera.setViewOffset(w, h, -w * 0.40, -h * 0.14, w, h);
     }
     camera.lookAt(0, 0.5, 0);
     camera.updateProjectionMatrix();
