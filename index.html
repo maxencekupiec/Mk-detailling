@@ -178,7 +178,7 @@ section{padding:64px 0;position:relative}
 [data-r].on{opacity:1;transform:none}
 
 /* ===== NAV ===== */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);background:rgba(13,14,18,0.72);border-bottom:1px solid var(--line)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);background:rgba(13,14,18,0.72)}
 .nav-in{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav img{height:46px;width:auto}
 .nav-links{display:flex;gap:30px;font-size:0.92rem;color:var(--muted)}
@@ -239,7 +239,7 @@ section{padding:64px 0;position:relative}
 .orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;opacity:0.5}
 
 /* marquee outline */
-.mq{overflow:hidden;padding:24px 0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+.mq{overflow:hidden;padding:24px 0;background:var(--bg)}
 .mq-t{display:flex;align-items:center;gap:38px;width:max-content;animation:scroll 24s linear infinite;white-space:nowrap}
 .mq-t span{font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:800;letter-spacing:0.02em;color:var(--white);text-transform:uppercase}
 .mq-t span.full{color:var(--white);-webkit-text-stroke:0}
@@ -280,7 +280,7 @@ section{padding:64px 0;position:relative}
 .t-card small{color:var(--muted);font-size:0.8rem;line-height:1.45;display:block}
 
 /* === experience 3D scroll === */
-.czoom{height:300vh;position:relative;padding:0;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 8%,var(--bg) 100%)}
+.czoom{height:300vh;position:relative;padding:0;background:var(--bg)}
 .cz-sticky{position:sticky;top:0;height:100vh;overflow:hidden}
 #carCanvas{position:absolute;inset:0;width:100%;height:100%}
 .cz-grid{position:absolute;inset:0;z-index:3;display:flex;align-items:center;pointer-events:none}
@@ -312,7 +312,7 @@ section{padding:64px 0;position:relative}
 .cz-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;color:#5f656e;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase}
 
 /* === atelier en action (videos) === */
-.action{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);overflow:hidden;position:relative}
+.action{background:var(--bg);overflow:hidden;position:relative}
 .action-social{display:flex;gap:10px}
 .action-wall{margin:34px auto 0;padding:0 0 26px}
 .action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto}
@@ -359,7 +359,7 @@ section{padding:64px 0;position:relative}
 .ba-thumbs button.sel{opacity:1;border-color:var(--blue)}
 
 /* ===== PRESTATIONS ===== */
-.prestas{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg2) 72%,var(--bg) 100%)}
+.prestas{background:var(--bg)}
 /* 3 cartes horizontales pleine largeur, empilees */
 .p-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
 .p-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 32px;display:grid;grid-template-columns:minmax(210px,250px) 1fr auto;gap:34px;align-items:center;position:relative;transition:transform .4s var(--ease),border-color .4s}
@@ -403,7 +403,7 @@ section{padding:64px 0;position:relative}
 .a-who small{color:var(--faint);font-size:0.76rem}
 
 /* ===== MAXENCE ===== */
-.max{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+.max{background:var(--bg);overflow:hidden;position:relative}
 .prestas{overflow:hidden;position:relative}
 .max-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center}
 .max-photo{border-radius:22px;overflow:hidden;aspect-ratio:4/4.6;position:relative;border:1px solid var(--line)}
@@ -438,7 +438,7 @@ section{padding:64px 0;position:relative}
 .faq-a p{padding:0 0 22px;color:var(--muted);font-size:0.94rem}
 
 /* ===== FOOTER ===== */
-footer{border-top:1px solid var(--line);padding:42px 0 30px;text-align:center}
+footer{padding:42px 0 30px;text-align:center}
 footer img{height:64px;margin-bottom:16px}
 footer .f-slogan{color:var(--muted);font-size:0.92rem}
 footer .f-links{display:flex;gap:22px;justify-content:center;margin:22px 0;font-size:0.85rem;color:var(--faint)}
@@ -737,7 +737,7 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 </section>
 
 <section class="prestas" id="prestations">
-  <div class="orb" style="width:460px;height:460px;background:#2b1dff;top:-140px;left:-160px;opacity:0.16"></div>
+  <div class="orb" style="width:560px;height:560px;background:#2b1dff;top:-180px;left:-200px;opacity:0.07"></div>
   <div class="container" style="position:relative">
     <span class="kicker" data-r>Prestations</span>
     <h2 data-r>Trois formules. <span class="hgrad">Z&eacute;ro surprise.</span></h2>
@@ -836,7 +836,7 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 </section>
 
 <section class="action" id="action">
-  <div class="orb" style="width:420px;height:420px;background:#2b1dff;bottom:-160px;right:-140px;opacity:0.14"></div>
+  <div class="orb" style="width:540px;height:540px;background:#2b1dff;bottom:-200px;right:-180px;opacity:0.06"></div>
   <div class="container" style="position:relative">
     <div style="display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap">
       <div>
