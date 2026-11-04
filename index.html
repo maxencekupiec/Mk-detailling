@@ -292,6 +292,10 @@ section{padding:64px 0;position:relative}
 .cz-step i{font-style:normal;font-weight:700;color:#7a6cff;font-size:0.78rem;letter-spacing:1px;margin-top:4px}
 .cz-step b{font-size:1.02rem}
 .cz-step p{font-size:0.86rem;color:var(--muted);margin-top:3px}
+.cz-desc{display:none}
+@keyframes czfade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.cz-desc.swap{animation:czfade .45s var(--ease)}
+.cz-fade{position:absolute;left:0;right:0;bottom:0;height:24vh;background:linear-gradient(to bottom,rgba(16,18,22,0) 0%,#101216 90%);z-index:2;pointer-events:none}
 .cz-cta{position:absolute;left:0;right:0;bottom:7vh;display:flex;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s;pointer-events:none}
 .cz-cta.on{opacity:1;transform:none;pointer-events:auto}
 @media(max-width:900px){
@@ -306,6 +310,7 @@ section{padding:64px 0;position:relative}
   .cz-step i{font-size:0.56rem;margin-top:0}
   .cz-step b{font-size:0.7rem;line-height:1.25}
   .cz-step p{display:none}
+  .cz-desc{display:block;margin:13px auto 0;max-width:330px;font-size:0.78rem;line-height:1.5;color:var(--muted)}
   .cz-cta{bottom:4vh}
   .cz-cta .btn{padding:11px 20px;font-size:0.78rem}
   .cz-hint{bottom:3vh}
@@ -731,9 +736,11 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
           <div class="cz-step"><i>02</i><div><b>Lavage &agrave; la main</b><p>M&eacute;thode des deux seaux, gant microfibre, shampoing pH neutre&nbsp;: chaque panneau, chaque jante, chaque vitre est travaill&eacute; &agrave; la main.</p></div></div>
           <div class="cz-step"><i>03</i><div><b>Cire c&eacute;ramique</b><p>Protection appliqu&eacute;e en finition&nbsp;: brillance profonde, effet d&eacute;perlant, et une salet&eacute; qui n'accroche plus pendant des mois.</p></div></div>
         </div>
+        <p class="cz-desc" id="czDesc"></p>
         <div class="cz-cta" id="czCta"><a href="#devis" class="btn btn-p">Je veux le m&ecirc;me r&eacute;sultat</a></div>
       </div>
     </div>
+    <div class="cz-fade"></div>
     <div class="cz-hint" id="czHint">Scrollez pour nettoyer</div>
   </div>
 </section>
@@ -1197,7 +1204,7 @@ function init3D() {
       camera.setViewOffset(w, h, -w * 0.17, 0, w, h);
     } else {
       // mobile : titre et etapes en haut, voiture entiere centree en dessous
-      camera.position.set(8.5, 2.4, 8.5);
+      camera.position.set(8.9, 2.5, 8.9);
       camera.setViewOffset(w, h, 0, -h * 0.12, w, h);
     }
     camera.lookAt(0, 0.5, 0);
@@ -1278,7 +1285,9 @@ function init3D() {
 // scroll -> progression du nettoyage + copy
 let targetClean = 0;
 const czSteps = document.querySelectorAll('.cz-step'),
-      czCta = document.getElementById('czCta'), czHint = document.getElementById('czHint');
+      czCta = document.getElementById('czCta'), czHint = document.getElementById('czHint'),
+      czDesc = document.getElementById('czDesc');
+let czLastIdx = -1;
 function czUpdate() {
   const r = section.getBoundingClientRect();
   const total = section.offsetHeight - innerHeight;
@@ -1286,6 +1295,11 @@ function czUpdate() {
   targetClean = Math.max(0, Math.min(1, (p - 0.08) / 0.78));
   const idx = Math.min(2, Math.floor(targetClean * 3));
   czSteps.forEach((s, i) => s.classList.toggle('on', i === idx));
+  if (idx !== czLastIdx) {
+    czLastIdx = idx;
+    czDesc.textContent = czSteps[idx].querySelector('p').textContent;
+    czDesc.classList.remove('swap'); void czDesc.offsetWidth; czDesc.classList.add('swap');
+  }
   czCta.classList.toggle('on', p > 0.82);
   czHint.style.opacity = (p > 0.75 || p < 0.02) ? 0 : 1;
 }
