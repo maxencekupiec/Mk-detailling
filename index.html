@@ -273,11 +273,6 @@ section{padding:64px 0;position:relative}
 .step .s-meta{display:inline-flex;align-items:center;gap:7px;font-size:0.76rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--blue-light);background:rgba(43,29,255,0.1);padding:5px 12px;border-radius:99px;margin-bottom:14px}
 .step ul{list-style:none;margin-top:14px;display:grid;gap:7px;font-size:0.86rem;color:#b9bdc4}
 .step li::before{content:'✓';color:var(--blue-light);font-weight:700;margin-right:8px}
-.trust-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
-.t-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
-.t-card svg{margin-bottom:10px}
-.t-card b{display:block;font-size:0.92rem;margin-bottom:4px}
-.t-card small{color:var(--muted);font-size:0.8rem;line-height:1.45;display:block}
 
 /* === experience 3D scroll === */
 .czoom{height:300vh;position:relative;padding:0;background:var(--bg)}
@@ -512,11 +507,6 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
   .step h3{grid-column:2;font-size:1.02rem;margin-bottom:0}
   .step p{display:none}
   /* confiance : 2x2 lisible */
-  .trust-cards{grid-template-columns:repeat(2,1fr);gap:9px;margin-top:20px}
-  .t-card{padding:14px 10px;border-radius:13px}
-  .t-card svg{width:15px;height:15px;margin-bottom:6px}
-  .t-card b{font-size:0.78rem;margin-bottom:3px}
-  .t-card small{font-size:0.66rem;line-height:1.4}
   /* avis : mosaique 2 colonnes */
   .avis-grid{columns:2;column-gap:10px}
   .a-card{padding:14px;margin-bottom:10px;border-radius:14px}
@@ -831,11 +821,11 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
         <p>On inspecte le r&eacute;sultat ensemble. Vous r&eacute;glez seulement si c'est impeccable.</p>
       </div>
     </div>
-    <div class="trust-cards">
-      <div class="t-card" data-r><svg width="18" height="18" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg><b>Entreprise d&eacute;clar&eacute;e</b><small>Bas&eacute;e pr&egrave;s de Nancy, facture incluse.</small></div>
-      <div class="t-card" data-r><svg width="18" height="18" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg><b>Produits professionnels</b><small>Les gammes des pr&eacute;parateurs haut de gamme.</small></div>
-      <div class="t-card" data-r><svg width="18" height="18" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg><b>Tous v&eacute;hicules</b><small>Du quotidien au premium.</small></div>
-      <div class="t-card" data-r><svg width="18" height="18" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg><b>Z&eacute;ro risque</b><small>Prix fix&eacute; avant, paiement apr&egrave;s.</small></div>
+    <div class="faq-list">
+      <div class="faq-item" data-r><button>Combien &ccedil;a co&ucirc;te exactement ?</button><div class="faq-a"><p>Int&eacute;rieur ou ext&eacute;rieur : de 80 &agrave; 130 &euro;. Compl&egrave;te : de 160 &agrave; 250 &euro;. Le prix exact d&eacute;pend de la taille du v&eacute;hicule et de son &eacute;tat, il est confirm&eacute; avant l'intervention et ne bouge plus ensuite.</p></div></div>
+      <div class="faq-item" data-r><button>De quoi avez-vous besoin chez moi ?</button><div class="faq-a"><p>Une prise &eacute;lectrique et un point d'eau accessibles. C'est tout : le reste du mat&eacute;riel professionnel est apport&eacute; sur place.</p></div></div>
+      <div class="faq-item" data-r><button>Poils d'animaux, taches, moisissures : vous g&eacute;rez ?</button><div class="faq-a"><p>Oui, c'est m&ecirc;me notre sp&eacute;cialit&eacute;. D&eacute;contamination vapeur et injection-extraction viennent &agrave; bout des habitacles les plus difficiles. Envoyez des photos pour un devis juste.</p></div></div>
+      <div class="faq-item" data-r><button>Quand peut-on intervenir ?</button><div class="faq-a"><p>Sous 7 jours maximum, souvent plus vite. D&eacute;crivez votre besoin sur WhatsApp et Maxence vous propose un cr&eacute;neau dans la journ&eacute;e.</p></div></div>
     </div>
     <div style="text-align:center;margin-top:34px" data-r>
       <a href="#devis" class="btn btn-p">R&eacute;server mon cr&eacute;neau</a>
@@ -906,19 +896,6 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
       <a class="btn btn-g" href="tel:+33781861695">Ou appeler le 07 81 86 16 95</a>
     </div>
     <p class="final-reassure" data-r>Premier &eacute;change sans engagement &middot; Vous payez uniquement une fois satisfait</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <span class="kicker" data-r style="text-align:center;display:block">Questions fr&eacute;quentes</span>
-    <h2 data-r style="text-align:center">Tout ce qu'on <span class="hgrad">nous demande</span>.</h2>
-    <div class="faq-list">
-      <div class="faq-item" data-r><button>Combien &ccedil;a co&ucirc;te exactement ?</button><div class="faq-a"><p>Int&eacute;rieur ou ext&eacute;rieur : de 80 &agrave; 130 &euro;. Compl&egrave;te : de 160 &agrave; 250 &euro;. Le prix exact d&eacute;pend de la taille du v&eacute;hicule et de son &eacute;tat, il est confirm&eacute; avant l'intervention et ne bouge plus ensuite.</p></div></div>
-      <div class="faq-item" data-r><button>De quoi avez-vous besoin chez moi ?</button><div class="faq-a"><p>Une prise &eacute;lectrique et un point d'eau accessibles. C'est tout : le reste du mat&eacute;riel professionnel est apport&eacute; sur place.</p></div></div>
-      <div class="faq-item" data-r><button>Poils d'animaux, taches, moisissures : vous g&eacute;rez ?</button><div class="faq-a"><p>Oui, c'est m&ecirc;me notre sp&eacute;cialit&eacute;. D&eacute;contamination vapeur et injection-extraction viennent &agrave; bout des habitacles les plus difficiles. Envoyez des photos pour un devis juste.</p></div></div>
-      <div class="faq-item" data-r><button>Quand peut-on intervenir ?</button><div class="faq-a"><p>Sous 7 jours maximum, souvent plus vite. D&eacute;crivez votre besoin sur WhatsApp et Maxence vous propose un cr&eacute;neau dans la journ&eacute;e.</p></div></div>
-    </div>
   </div>
 </section>
 
