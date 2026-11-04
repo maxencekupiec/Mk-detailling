@@ -297,15 +297,15 @@ section{padding:64px 0;position:relative}
 @media(max-width:900px){
   /* meme rendu que desktop : texte a gauche, voiture a droite */
   .cz-sticky{height:88vh}
-  .cz-grid{align-items:flex-start;padding-top:11vh}
-  .cz-left{width:62%;margin-left:0;padding:0 0 0 16px}
-  .cz-left .kicker{font-size:0.64rem;letter-spacing:2.5px;margin-bottom:9px}
-  .cz-left h2{font-size:1.35rem}
-  .cz-steps{margin-top:16px;gap:7px}
-  .cz-step{padding:10px 12px;gap:10px;border-radius:12px}
-  .cz-step i{font-size:0.58rem;margin-top:3px}
-  .cz-step b{font-size:0.8rem}
-  .cz-step p{display:block;font-size:0.64rem;line-height:1.4;margin-top:2px}
+  .cz-grid{align-items:flex-start;padding-top:10vh}
+  .cz-left{width:100%;margin-left:0;padding:0 18px;text-align:center}
+  .cz-left .kicker{font-size:0.66rem;letter-spacing:2.5px;margin-bottom:8px}
+  .cz-left h2{font-size:1.72rem}
+  .cz-steps{margin-top:16px;grid-template-columns:repeat(3,1fr);gap:6px}
+  .cz-step{flex-direction:column;align-items:center;text-align:center;padding:10px 6px;gap:4px;border-radius:12px}
+  .cz-step i{font-size:0.56rem;margin-top:0}
+  .cz-step b{font-size:0.7rem;line-height:1.25}
+  .cz-step p{display:none}
   .cz-cta{bottom:4vh}
   .cz-cta .btn{padding:11px 20px;font-size:0.78rem}
   .cz-hint{bottom:3vh}
@@ -1196,9 +1196,9 @@ function init3D() {
       camera.position.set(5.4, 1.7, 5.4);
       camera.setViewOffset(w, h, -w * 0.17, 0, w, h);
     } else {
-      // mobile : comme desktop, texte a gauche et voiture dans la moitie droite
-      camera.position.set(7.8, 2.1, 7.8);
-      camera.setViewOffset(w, h, -w * 0.40, -h * 0.14, w, h);
+      // mobile : titre et etapes en haut, voiture entiere centree en dessous
+      camera.position.set(8.5, 2.4, 8.5);
+      camera.setViewOffset(w, h, 0, -h * 0.12, w, h);
     }
     camera.lookAt(0, 0.5, 0);
     camera.updateProjectionMatrix();
