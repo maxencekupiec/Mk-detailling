@@ -36,6 +36,10 @@
 }
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* curseur etoiles du logo : defaut blanc, bleu sur les elements cliquables */
+html,body{cursor:url("assets/cursor-star.png") 11 12, auto}
+a,button,[role=button],select,label{cursor:url("assets/cursor-star-hover.png") 11 12, pointer}
+input,textarea{cursor:url("assets/cursor-star-hover.png") 11 12, text}
 ::selection{background:var(--blue);color:#fff}
 img{max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -186,7 +190,7 @@ section{padding:64px 0;position:relative}
 .nav-right{display:flex;align-items:center;gap:18px}
 .nav-tel{font-size:0.92rem;font-weight:600;color:var(--white);display:flex;align-items:center;gap:8px}
 .nav-tel svg{opacity:0.7}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:99px;font-family:inherit;font-weight:600;font-size:0.95rem;border:none;cursor:pointer;transition:all .35s var(--ease);position:relative;overflow:hidden}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:99px;font-family:inherit;font-weight:600;font-size:0.95rem;border:none;cursor:url("assets/cursor-star-hover.png") 11 12,pointer;transition:all .35s var(--ease);position:relative;overflow:hidden}
 .btn-p{background:var(--blue-deep);color:#fff;box-shadow:0 0 24px rgba(26,12,240,0.45),inset 0 1px 0 rgba(255,255,255,0.22)}
 .btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 34px rgba(26,12,240,0.6)}
 .btn-p::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,0.35),transparent);transform:skewX(-20deg);animation:shine 3.5s var(--ease) infinite}
@@ -258,7 +262,7 @@ section{padding:64px 0;position:relative}
 .vz-head{text-align:center;margin-bottom:30px;transition:opacity .3s,transform .3s}
 .vz-frame{position:relative;width:72vw;height:40.5vw;max-height:76vh;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 90px rgba(26,12,240,0.25);will-change:width,height}
 .vz-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.vz-sound{position:absolute;right:16px;bottom:16px;z-index:2;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);background:rgba(10,11,14,0.55);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.vz-sound{position:absolute;right:16px;bottom:16px;z-index:2;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);background:rgba(10,11,14,0.55);backdrop-filter:blur(6px);color:#fff;cursor:url("assets/cursor-star-hover.png") 11 12,pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
 .vz-sound.on{background:var(--blue-deep);border-color:var(--blue-deep)}
 .vz-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:#c3c7cd;opacity:0.8;transition:opacity .3s}
 
@@ -323,7 +327,7 @@ section{padding:64px 0;position:relative}
 .a-video:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(26,12,240,0.25)}
 .a-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .a-tag{position:absolute;left:12px;bottom:12px;z-index:2;font-size:0.74rem;font-weight:600;letter-spacing:0.5px;background:rgba(10,11,14,0.65);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.15);padding:6px 12px;border-radius:99px}
-.a-sound{position:absolute;right:10px;top:10px;z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);background:rgba(10,11,14,0.55);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.a-sound{position:absolute;right:10px;top:10px;z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);background:rgba(10,11,14,0.55);backdrop-filter:blur(6px);color:#fff;cursor:url("assets/cursor-star-hover.png") 11 12,pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
 .a-sound.on{background:var(--blue-deep);border-color:var(--blue-deep)}
 @media(max-width:900px){
 /* mur en grille verticale : 2 par ligne, on scrolle vers le bas */
@@ -356,7 +360,7 @@ section{padding:64px 0;position:relative}
 .ba-tag.av{left:16px;background:rgba(0,0,0,0.45);color:#fff}
 .ba-tag.ap{right:16px;background:var(--blue-deep);color:#fff}
 .ba-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
-.ba-thumbs button{border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:none;padding:0;opacity:0.55;transition:all .3s;aspect-ratio:16/10}
+.ba-thumbs button{border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:url("assets/cursor-star-hover.png") 11 12,pointer;background:none;padding:0;opacity:0.55;transition:all .3s;aspect-ratio:16/10}
 .ba-thumbs button img{width:100%;height:100%;object-fit:cover;display:block}
 .ba-thumbs button.sel{opacity:1;border-color:var(--blue)}
 
@@ -433,7 +437,7 @@ section{padding:64px 0;position:relative}
 /* ===== FAQ ===== */
 .faq-list{max-width:720px;margin:30px auto 0}
 .faq-item{border-bottom:1px solid var(--line)}
-.faq-item button{width:100%;background:none;border:none;color:var(--white);font-family:inherit;font-size:1.02rem;font-weight:600;text-align:left;padding:22px 40px 22px 0;cursor:pointer;position:relative}
+.faq-item button{width:100%;background:none;border:none;color:var(--white);font-family:inherit;font-size:1.02rem;font-weight:600;text-align:left;padding:22px 40px 22px 0;cursor:url("assets/cursor-star-hover.png") 11 12,pointer;position:relative}
 .faq-item button::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--blue-light);font-weight:400;transition:transform .3s}
 .faq-item.open button::after{transform:translateY(-50%) rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
