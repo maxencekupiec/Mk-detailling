@@ -244,7 +244,8 @@ section{padding:64px 0;position:relative}
 
 /* marquee outline */
 .mq{overflow:hidden;padding:24px 0;background:var(--bg)}
-.mq-t{display:flex;align-items:center;gap:38px;width:max-content;animation:scroll 24s linear infinite;white-space:nowrap}
+.mq-t{display:flex;width:max-content;animation:scroll 24s linear infinite}
+.mq-set{display:flex;align-items:center;gap:38px;padding-right:38px;white-space:nowrap}
 .mq-t span{font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:800;letter-spacing:0.02em;color:var(--white);text-transform:uppercase}
 .mq-t span.full{color:var(--white);-webkit-text-stroke:0}
 .mq-t svg{flex:none}
@@ -347,7 +348,15 @@ section{padding:64px 0;position:relative}
 /* ===== LOGOS ===== */
 .logos{padding:24px 0;overflow:hidden}
 .logos p{text-align:center;font-size:0.78rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--faint);margin-bottom:18px}
-.logo-track{display:flex;gap:64px;width:max-content;animation:scroll 28s linear infinite;font-weight:700;font-size:1.15rem;color:#555b64;white-space:nowrap}
+.logo-track{display:flex;width:max-content;animation:scroll 36s linear infinite}
+.lt-set{display:flex;align-items:center;gap:72px;padding-right:72px}
+.lt-set img{height:30px;width:auto;filter:brightness(0) invert(1);opacity:0.5}
+.lt-set img[src*="porsche"]{height:34px}
+.lt-set img[src*="audi"]{height:24px}
+.lt-set img[src*="tesla"]{height:27px}
+.lt-set img[src*="rangerover"]{height:13px}
+.lt-set img[src*="alpine"]{height:27px}
+.lt-set img[src*="cupra"]{height:17px}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
 /* ===== AVANT/APRES ===== */
@@ -470,6 +479,7 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 
 @media(max-width:900px){
   .nav-links,.nav-tel{display:none}
+  .lt-set{gap:44px;padding-right:44px;zoom:0.8}
   section{padding:32px 0}
   .sub{font-size:0.92rem;margin-top:10px}
   /* fond unifie : plus de bandes plus claires entre les sections */
@@ -679,8 +689,16 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 <div class="logos">
   <p>D&eacute;j&agrave; pass&eacute;es entre nos mains</p>
   <div class="logo-track">
-    <span>PORSCHE</span><span>BMW M</span><span>MERCEDES-AMG</span><span>AUDI RS</span><span>TESLA</span><span>RANGE ROVER</span><span>ALPINE</span><span>CUPRA</span>
-    <span>PORSCHE</span><span>BMW M</span><span>MERCEDES-AMG</span><span>AUDI RS</span><span>TESLA</span><span>RANGE ROVER</span><span>ALPINE</span><span>CUPRA</span>
+    <div class="lt-set">
+      <img src="assets/brands/porsche.svg" alt="Porsche"><img src="assets/brands/bmw.svg" alt="BMW"><img src="assets/brands/mercedes.svg" alt="Mercedes"><img src="assets/brands/audi.svg" alt="Audi" class="wide"><img src="assets/brands/tesla.svg" alt="Tesla"><img src="assets/brands/rangerover.svg" alt="Range Rover" class="wide"><img src="assets/brands/alpine.svg" alt="Alpine" class="wide"><img src="assets/brands/cupra.svg" alt="Cupra" class="wide">
+      <img src="assets/brands/porsche.svg" alt=""><img src="assets/brands/bmw.svg" alt=""><img src="assets/brands/mercedes.svg" alt=""><img src="assets/brands/audi.svg" alt="" class="wide"><img src="assets/brands/tesla.svg" alt=""><img src="assets/brands/rangerover.svg" alt="" class="wide"><img src="assets/brands/alpine.svg" alt="" class="wide"><img src="assets/brands/cupra.svg" alt="" class="wide">
+      <img src="assets/brands/porsche.svg" alt=""><img src="assets/brands/bmw.svg" alt=""><img src="assets/brands/mercedes.svg" alt=""><img src="assets/brands/audi.svg" alt="" class="wide"><img src="assets/brands/tesla.svg" alt=""><img src="assets/brands/rangerover.svg" alt="" class="wide"><img src="assets/brands/alpine.svg" alt="" class="wide"><img src="assets/brands/cupra.svg" alt="" class="wide">
+    </div>
+    <div class="lt-set" aria-hidden="true">
+      <img src="assets/brands/porsche.svg" alt=""><img src="assets/brands/bmw.svg" alt=""><img src="assets/brands/mercedes.svg" alt=""><img src="assets/brands/audi.svg" alt="" class="wide"><img src="assets/brands/tesla.svg" alt=""><img src="assets/brands/rangerover.svg" alt="" class="wide"><img src="assets/brands/alpine.svg" alt="" class="wide"><img src="assets/brands/cupra.svg" alt="" class="wide">
+      <img src="assets/brands/porsche.svg" alt=""><img src="assets/brands/bmw.svg" alt=""><img src="assets/brands/mercedes.svg" alt=""><img src="assets/brands/audi.svg" alt="" class="wide"><img src="assets/brands/tesla.svg" alt=""><img src="assets/brands/rangerover.svg" alt="" class="wide"><img src="assets/brands/alpine.svg" alt="" class="wide"><img src="assets/brands/cupra.svg" alt="" class="wide">
+      <img src="assets/brands/porsche.svg" alt=""><img src="assets/brands/bmw.svg" alt=""><img src="assets/brands/mercedes.svg" alt=""><img src="assets/brands/audi.svg" alt="" class="wide"><img src="assets/brands/tesla.svg" alt=""><img src="assets/brands/rangerover.svg" alt="" class="wide"><img src="assets/brands/alpine.svg" alt="" class="wide"><img src="assets/brands/cupra.svg" alt="" class="wide">
+    </div>
   </div>
 </div>
 
@@ -708,12 +726,28 @@ footer .f-copy{font-size:0.78rem;color:var(--faint)}
 
 <div class="mq" aria-hidden="true">
   <div class="mq-t">
-    <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
-    <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
-    <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
-    <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
-    <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
-    <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+    <div class="mq-set">
+      <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+    </div>
+    <div class="mq-set">
+      <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Nettoy&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span class="full">D&eacute;contamin&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+      <span>Prot&eacute;g&eacute;</span><svg width="26" height="26" viewBox="0 0 26 26"><path d="M13 1 Q14.3 11.7 25 13 Q14.3 14.3 13 25 Q11.7 14.3 1 13 Q11.7 11.7 13 1 Z" fill="#2b1dff"/></svg>
+    </div>
   </div>
 </div>
 
